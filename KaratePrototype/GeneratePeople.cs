@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,5 +107,22 @@ namespace KaratePrototype
             return num;
         }
         
+        public void GenerateFaces()
+        {
+            //Read uni id of player
+
+            //Get all students with that uni id
+            Random rnd = new Random();
+            int outputFileName=1;
+            List<Image> imageLayerList = new List<Image>() ;
+            ImageCombiner combiner = new ImageCombiner();
+            RandomFileGrabber grabber = new RandomFileGrabber();
+
+            //For Each Student
+            imageLayerList = grabber.SelectRandomImageFromDirectories(rnd);           
+            Bitmap faceImage = combiner.MergeImageLayers(imageLayerList);
+            combiner.SaveImage(faceImage, outputFileName);
+
+        }
     }
 }

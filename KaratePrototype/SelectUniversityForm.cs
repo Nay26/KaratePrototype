@@ -107,6 +107,7 @@ namespace KaratePrototype
             SelectPlayerUniversity();
             GeneratePeople startGameGen = new GeneratePeople();
             startGameGen.PopulateUniversities();
+            startGameGen.GenerateFaces();
             GoToMainScreen();
 
         }

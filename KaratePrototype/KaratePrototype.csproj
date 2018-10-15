@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneratePeople.cs" />
+    <Compile Include="ImageCombiner.cs" />
     <Compile Include="KaratePrototypeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,6 +74,7 @@
     <Compile Include="MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="RandomFileGrabber.cs" />
     <Compile Include="SelectUniversityForm.cs">
       <SubType>Form</SubType>
     </Compile>

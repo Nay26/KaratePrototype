@@ -1,0 +1,194 @@
+<?xml version = "1.0"?>
+<Universities>
+   <University>
+      <name>University of Liverpool</name>
+      <location>Liverpool</location>
+      <reputation>7</reputation>
+	  <budget>Medium</budget>
+	  <photopath>universityofliverpool</photopath>
+	  <description>The University of Liverpool is a public university based in the city of Liverpool, England. Founded as a college in 1881, it gained its royal charter in 1903 with the ability to award degrees and is also known to be one of the six original "red brick" civic universities. It comprises three faculties organised into 35 departments and schools. It is a founding member of the Russell Group, the N8 Group for research collaboration and the university management school is AACSB accredited.</description>
+	  <bucspoints>4</bucspoints>
+   </University>
+	<University>
+      <name>University of Cambridge</name>
+      <location>Cambridge</location>
+      <reputation>9</reputation>
+	  <budget>High</budget>
+	  <photopath>cambridgeuniversity</photopath>
+	  <description>The University of Cambridge (formally The Chancellor, Masters, and Scholars of the University of Cambridge) is a collegiate public research university in Cambridge, England. Founded in 1209 and granted a Royal Charter by King Henry III in 1231, Cambridge is the second-oldest university in the English-speaking world and the world's fourth-oldest surviving university. The university grew out of an association of scholars who left the University of Oxford after a dispute with the townspeople.[10] The two medieval universities share many common features and are often referred to jointly as "Oxbridge". The history and influence of the University of Cambridge has made it one of the most prestigious universities in the world.</description>
+	  <bucspoints>12</bucspoints>
+   </University>
+	<University>
+      <name>University of Bath</name>
+      <location>Bath</location>
+      <reputation>10</reputation>
+	  <budget>High</budget>
+	  <photopath>universityofbath</photopath>
+	  <description>The University of Bath is a public university located in Bath, Somerset, United Kingdom. It received its royal charter in 1966, along with a number of other institutions following the Robbins Report. Like the University of Bristol and University of the West of England, Bath can trace its roots to the Merchant Venturers' Technical College, established in Bristol as a school in 1595 by the Society of Merchant Venturers. The university's main campus is located on Claverton Down, a site overlooking the city of Bath, and was purpose-built, constructed from 1964 in the modernist style of the time.</description>
+	  <bucspoints>52</bucspoints>
+   </University>
+   <University>
+      <name>University of Edinburgh</name>
+      <location>Edinburgh</location>
+      <reputation>10</reputation>
+	  <budget>High</budget>
+	  <photopath>universityofedinburgh</photopath>
+	  <description>The University of Edinburgh (abbreviated as Edin. in post-nominals), founded in 1582, is the sixth oldest university in the English-speaking world and one of Scotland's ancient universities. The university is deeply embedded in the fabric of the city of Edinburgh, with many of the buildings in the historic Old Town belonging to the university.</description>
+	  <bucspoints>38</bucspoints>
+   </University>
+   <University>
+      <name>University of Kent</name>
+      <location>Kent</location>
+      <reputation>9</reputation>
+	  <budget>High</budget>
+	  <photopath>universityofkent</photopath>
+	  <description>The University of Kent (formerly the University of Kent at Canterbury), abbreviated as UKC, is a semi-collegiate public research university based in Kent, United Kingdom. It was founded in 1965 and is recognised as a Beloff's plate glass university. The University was granted its Royal Charter on 4 January 1965 and the following year Princess Marina, Duchess of Kent was formally installed as the first Chancellor. It celebrated its 50th anniversary in 2015.</description>
+	  <bucspoints>32</bucspoints>
+   </University>
+   <University>
+      <name>King's College London</name>
+      <location>London</location>
+      <reputation>10</reputation>
+	  <budget>High</budget>
+	  <photopath>kingscollegelondon</photopath>
+	  <description>King's College London (informally King's or KCL) is a public research university located in London, United Kingdom, and a founding constituent college of the federal University of London. King's was established in 1829 by King George IV and the Duke of Wellington, when it received its first royal charter (as a university college), and claims to be the fourth oldest university institution in England. In 1836, King's became one of the two founding colleges of the University of London. In the late 20th century, King's grew through a series of mergers, including with Queen Elizabeth College and Chelsea College of Science and Technology (in 1985), the Institute of Psychiatry (in 1997), the United Medical and Dental Schools of Guy's and St Thomas' Hospitals and the Florence Nightingale School of Nursing and Midwifery (in 1998).</description>
+	  <bucspoints>22</bucspoints>
+   </University>
+   <University>
+      <name>University of Birmingham</name>
+      <location>Birmingham</location>
+      <reputation>8</reputation>
+	  <budget>High</budget>
+	  <photopath>universityofbirmingham</photopath>
+	  <description>The University of Birmingham (informally Birmingham University) is a public research university located in Edgbaston, Birmingham, United Kingdom. It received its royal charter in 1900 as a successor to Queen's College, Birmingham (founded in 1825 as the Birmingham School of Medicine and Surgery) and Mason Science College (established in 1875 by Sir Josiah Mason), making it the first English civic or 'red brick' university to receive its own royal charter. It is a founding member of both the Russell Group of British research universities and the international network of research universities, Universitas 21.</description>
+	  <bucspoints>20</bucspoints>
+   </University>
+   <University>
+      <name>University of Nottingham</name>
+      <location>Nottingham</location>
+      <reputation>7</reputation>
+	  <budget>Medium</budget>
+	  <photopath>universityofnottingham</photopath>
+	  <description>The University of Nottingham is a public research university in Nottingham, United Kingdom. It was founded as University College Nottingham in 1881, and was granted a Royal Charter in 1948.</description>
+	  <bucspoints>20</bucspoints>
+   </University>
+   <University>
+      <name>University of Surrey</name>
+      <location>Guildford</location>
+      <reputation>7</reputation>
+	  <budget>Medium</budget>
+	  <photopath>universityofsurrey</photopath>
+	  <description>The University of Surrey is a public research university located in Guildford, Surrey, United Kingdom. The university specialises in science, engineering, medicine and business. It received its charter on 9 September 1966, and was previously situated near Battersea Park in south-west London. The institution was known as Battersea College of Technology before gaining university status. Its roots, however, go back to the Battersea Polytechnic Institute, founded in 1891 to provide further and higher education for London's poorer inhabitants. More recently, the university launched the Surrey International Institute with Dongbei University of Finance and Economics.</description>
+	  <bucspoints>20</bucspoints>
+   </University>
+   <University>
+      <name>University of Manchester</name>
+      <location>Manchester</location>
+      <reputation>9</reputation>
+	  <budget>High</budget>
+	  <photopath>universityofmanchester</photopath>
+	  <description>The University of Manchester is a public research university in Manchester, England, formed in 2004 by the merger of the University of Manchester Institute of Science and Technology and the Victoria University of Manchester. The University of Manchester is a red brick university, a product of the civic university movement of the late 19th century.</description>
+	  <bucspoints>18</bucspoints>
+   </University>
+   <University>
+      <name>Coventry University</name>
+      <location>Coventry</location>
+      <reputation>6</reputation>
+	  <budget>Medium</budget>
+	  <photopath>coventryuniversity</photopath>
+	  <description>Coventry University is a public research university in Coventry, England, known as Lanchester Polytechnic until 1987, and Coventry Polytechnic until it was awarded university status in 1992. Its four faculties, which are made up of schools and departments, run around 300 undergraduate and postgraduate courses. Across the university there are 11 research centres which specialise in different fields, from transport to peace studies.</description>
+	  <bucspoints>16</bucspoints>
+   </University>
+    <University>
+      <name>Northumbria University</name>
+      <location>Newcastle</location>
+      <reputation>6</reputation>
+	  <budget>Medium</budget>
+	  <photopath>northumbriauniversity</photopath>
+	  <description>Northumbria University has its origins in three Newcastle colleges: Rutherford College of Technology, which was established by John Hunter Rutherford in 1880 and opened formally in 1894 by the Duke of York (later King George V), the College of Art and Industrial Design and the Municipal College of Commerce</description>
+	  <bucspoints>16</bucspoints>
+   </University>
+   <University>
+	<name>University of Glasgow</name>
+	<location>Glasgow</location>
+	<photopath>universityofglasgow</photopath>
+	<reputation>7</reputation>
+	<budget>medium</budget>
+	<description>The University of Glasgow (Scottish Gaelic: Oilthigh Ghlaschu; Latin: Universitas Glasguensis; abbreviated as Glas. in post-nominals) is the fourth-oldest university in the English-speaking world and one of Scotland's four ancient universities. It was founded in 1451. Along with the universities of Edinburgh, Aberdeen, and St. Andrews, the University was part of the Scottish Enlightenment during the 18th century. It is currently a member of Universitas 21, the Russell Group and The Guild of European Research-Intensive Universities. </description>
+	<bucspoints>14</bucspoints>
+</University>
+<University>
+	<name>Middlesex University</name>
+	<location>London</location>
+	<photopath>middlesexuniversity</photopath>
+	<reputation>6</reputation>
+	<budget>low</budget>
+	<description>Middlesex University London is a public university in Hendon, north west London, England. It is one of the post-1992 universities and is a member of the Million+ working group. The name of the University is taken from its location within the historic county boundaries of Middlesex. The university’s history can be traced back to 1878 when its founding institute, St Katherine’s College, was established in Tottenham as a teacher training college for women. Having merged with several other institutes, the university was consolidated in its current form in 1992. </description>
+	<bucspoints>14</bucspoints>
+</University>
+<University>
+	<name>University of St Andrews</name>
+	<location>Fife</location>
+	<photopath>universityofstandrews</photopath>
+	<reputation>9</reputation>
+	<budget>high</budget>
+	<description>The University of St Andrews (Scots: University o St Andras; abbreviated as St And, from the Latin Sancti Andreae, in post-nominals) is a British public university in St Andrews, Fife, Scotland. It is the oldest of the four ancient universities of Scotland and the third oldest university in the English-speaking world (following Oxford and Cambridge Universities). St Andrews was founded between 1410 and 1413, when the Avignon Antipope Benedict XIII issued a papal bull to a small founding group of Augustinian clergy.</description>
+	<bucspoints>14</bucspoints>
+</University>
+<University>
+	<name>University of Dundee</name>
+	<location>Dundee</location>
+	<photopath>universityofdundee</photopath>
+	<reputation>6</reputation>
+	<budget>medium</budget>
+	<description>The University of Dundee (abbreviated as Dund. for post-nominals) is a public research university in Dundee, Scotland. Founded in 1881 the institution was, for most of its early existence, a constituent college of the University of St Andrews alongside United College and St Mary's College located in the town of St Andrews itself. Following significant expansion, the University of Dundee gained independent university status in 1967 whilst retaining much of its ancient heritage and governance structure. </description>
+	<bucspoints>12</bucspoints>
+</University>
+<University>
+	<name>Aston University</name>
+	<location>Birmingham</location>
+	<photopath>astonuniversity</photopath>
+	<reputation>4</reputation>
+	<budget>low</budget>
+	<description>Aston University is a public research university situated at Gosta Green, in the city centre of Birmingham, England. Aston began as the Birmingham Municipal Technical School in 1895, evolving into the UK’s first College of Advanced Technology in 1956. Aston University received its royal charter from Queen Elizabeth II on 22 April 1966.</description>
+	<bucspoints>10</bucspoints>
+</University>
+<University>
+	<name>BPP University</name>
+	<location>United Kingdom</location>
+	<photopath>bppuniversity</photopath>
+	<reputation>3</reputation>
+	<budget>high</budget>
+	<description>BPP University is a private university specialising in law, business, finance, accountancy, banking, chiropractic, dentistry, nursing, psychology and healthcare. BPP University has sites in several UK city centre locations, particularly in London. Since 2009 it has been owned and run by BPP Holdings, part of the US-based for-profit education company Apollo Group. </description>
+	<bucspoints>10</bucspoints>
+</University>
+<University>
+	<name>University of East London</name>
+	<location>London</location>
+	<photopath>universityofeastlondon</photopath>
+	<reputation>5</reputation>
+	<budget>medium</budget>
+	<description>University of East London (UEL) is a public university located in the London Borough of Newham, London, England, based at three campuses in Stratford and Docklands, following the opening of University Square Stratford in September 2013. The university's roots can be traced back to 1892 when the West Ham Technical Institute was established. It gained university status in 1992. </description>
+	<bucspoints>10</bucspoints>
+</University>
+<University>
+	<name>Edinburgh Napier University</name>
+	<location>Edinburgh</location>
+	<photopath>edinburghnapieruniversity</photopath>
+	<reputation>5</reputation>
+	<budget>Low</budget>
+	<description>Edinburgh Napier University is a public university in Edinburgh, Scotland. Napier Technical College, the predecessor of the university was founded in 1964, taking its name from Scottish mathematician John Napier. It gained university status in 1992 and was renamed Napier University.</description>
+	<bucspoints>10</bucspoints>
+</University>
+<University>
+	<name>University of Leicester</name>
+	<location>Leicester</location>
+	<photopath>universityofleicester</photopath>
+	<reputation>6</reputation>
+	<budget>medium</budget>
+	<description>The University of Leicester is a public research university based in Leicester, England. The main campus is south of the city centre, adjacent to Victoria Park.</description>
+	<bucspoints>10</bucspoints>
+</University>
+   
+   
+</Universities>

@@ -123,6 +123,8 @@ namespace KaratePrototype
             Bitmap faceImage = combiner.MergeImageLayers(imageLayerList);
             combiner.SaveImage(faceImage, outputFileName);
 
+            //Save to db
+
         }
     }
 }

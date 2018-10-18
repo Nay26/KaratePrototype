@@ -11,7 +11,7 @@ namespace KaratePrototype
     {
 
         public int UniversityID;
-
+        public string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
         public SelectUniversityForm()
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace KaratePrototype
             string logo = "";
             int points = 0;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
+            conn.ConnectionString = connectionString;
             conn.Open();
             XmlDocument xml = new XmlDocument();
             xml.Load(@".\UniversitiesXML.xml");
@@ -104,10 +104,10 @@ namespace KaratePrototype
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            SelectPlayerUniversity();
+            int uniId = SelectPlayerUniversity();
             GeneratePeople startGameGen = new GeneratePeople();
             startGameGen.PopulateUniversities();
-            startGameGen.GenerateFaces();
+            startGameGen.GenerateFaces(uniId);
             GoToMainScreen();
 
         }
@@ -120,25 +120,29 @@ namespace KaratePrototype
             this.Hide();
         }
 
-        private void SelectPlayerUniversity()
+        private int SelectPlayerUniversity()
         {
             string name = universityNameLabel.Text;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
-            conn.Open();
+            conn.ConnectionString = connectionString; conn.Open();
             try
             {
-                string query = "SELECT UniversityID FROM Universities WHERE UniversityName = @name";
+                string query = "SELECT UniversityID, UniversityLogo FROM Universities WHERE UniversityName = @name";
                 SqlCommand myCommand = new SqlCommand(query, conn);
                 myCommand.Parameters.AddWithValue("@name", name);
                 using (SqlDataReader reader = myCommand.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        // Console.WriteLine(String.Format("{0}", reader["UniversityID"]));
+                        string uniLogoString = String.Format("{0}", reader["UniversityLogo"]);
                         string uniIDString = String.Format("{0}", reader["UniversityID"]);
                         UniversityID = Int32.Parse(uniIDString);
-                        File.WriteAllText(@".\University.txt", String.Format("{0}", reader["UniversityID"]));
+                        using (StreamWriter outputFile = new StreamWriter(@".\University.txt"))
+                        {
+                            outputFile.WriteLine(uniIDString);
+                            outputFile.WriteLine(name);
+                            outputFile.WriteLine(uniLogoString);
+                        }
                     }
                 }
             }
@@ -147,10 +151,13 @@ namespace KaratePrototype
                 Console.WriteLine(e.ToString());
             }
             conn.Close();
+            return UniversityID;
         }
 
         private void quitButton_Click(object sender, EventArgs e)
         {
+            Cleanup clean = new Cleanup();
+            clean.CleanFilesAndDB();
             Application.Exit();
         }
         

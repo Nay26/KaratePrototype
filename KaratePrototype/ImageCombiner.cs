@@ -15,7 +15,7 @@ namespace KaratePrototype
 
         public ImageCombiner()
         {
-            outputFilePath = @".\Creation\CreatedImages";
+            outputFilePath = @".\Creation\CreatedImages\";
             outputImageExtension = ".png";
         }
 

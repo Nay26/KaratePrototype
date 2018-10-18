@@ -30,8 +30,10 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label10 = new System.Windows.Forms.Label();
+            this.universityComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.peopleListBox = new System.Windows.Forms.ListBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -40,13 +42,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.universityNameLabel = new System.Windows.Forms.Label();
+            this.universityLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.universityComboBox = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.quitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,7 +57,7 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.universityLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -74,11 +74,11 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.label7);
-            this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.dateLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.universityNameLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.universityLogoPictureBox);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.quitButton);
             this.splitContainer1.Size = new System.Drawing.Size(1129, 645);
             this.splitContainer1.SplitterDistance = 564;
             this.splitContainer1.TabIndex = 0;
@@ -95,7 +95,7 @@
             this.splitContainer2.Panel1.Controls.Add(this.label10);
             this.splitContainer2.Panel1.Controls.Add(this.universityComboBox);
             this.splitContainer2.Panel1.Controls.Add(this.label2);
-            this.splitContainer2.Panel1.Controls.Add(this.listBox1);
+            this.splitContainer2.Panel1.Controls.Add(this.peopleListBox);
             // 
             // splitContainer2.Panel2
             // 
@@ -111,6 +111,26 @@
             this.splitContainer2.SplitterDistance = 270;
             this.splitContainer2.TabIndex = 0;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(10, 53);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 17);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "University:";
+            // 
+            // universityComboBox
+            // 
+            this.universityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.universityComboBox.FormattingEnabled = true;
+            this.universityComboBox.Location = new System.Drawing.Point(87, 52);
+            this.universityComboBox.Name = "universityComboBox";
+            this.universityComboBox.Size = new System.Drawing.Size(170, 21);
+            this.universityComboBox.TabIndex = 2;
+            this.universityComboBox.SelectedIndexChanged += new System.EventHandler(this.universityComboBox_SelectedIndexChanged);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -121,13 +141,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Members:";
             // 
-            // listBox1
+            // peopleListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(11, 78);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(246, 472);
-            this.listBox1.TabIndex = 0;
+            this.peopleListBox.FormattingEnabled = true;
+            this.peopleListBox.Location = new System.Drawing.Point(11, 78);
+            this.peopleListBox.Name = "peopleListBox";
+            this.peopleListBox.Size = new System.Drawing.Size(246, 472);
+            this.peopleListBox.TabIndex = 0;
             // 
             // pictureBox2
             // 
@@ -214,24 +234,37 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Persons Name Here";
             // 
-            // label7
+            // dateLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(243, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(187, 28);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "University Name";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Location = new System.Drawing.Point(716, 24);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(256, 28);
+            this.dateLabel.TabIndex = 10;
+            this.dateLabel.Text = "Friday 12 January 2018";
+            this.dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // universityNameLabel
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(154, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 68);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.universityNameLabel.AutoSize = true;
+            this.universityNameLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.universityNameLabel.Location = new System.Drawing.Point(330, 24);
+            this.universityNameLabel.Name = "universityNameLabel";
+            this.universityNameLabel.Size = new System.Drawing.Size(187, 28);
+            this.universityNameLabel.TabIndex = 8;
+            this.universityNameLabel.Text = "University Name";
+            this.universityNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // universityLogoPictureBox
+            // 
+            this.universityLogoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.universityLogoPictureBox.Location = new System.Drawing.Point(154, 6);
+            this.universityLogoPictureBox.Name = "universityLogoPictureBox";
+            this.universityLogoPictureBox.Size = new System.Drawing.Size(170, 68);
+            this.universityLogoPictureBox.TabIndex = 9;
+            this.universityLogoPictureBox.TabStop = false;
             // 
             // button2
             // 
@@ -242,43 +275,15 @@
             this.button2.Text = "Next Day";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // quitButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 47);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Quit";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // universityComboBox
-            // 
-            this.universityComboBox.FormattingEnabled = true;
-            this.universityComboBox.Location = new System.Drawing.Point(87, 52);
-            this.universityComboBox.Name = "universityComboBox";
-            this.universityComboBox.Size = new System.Drawing.Size(170, 21);
-            this.universityComboBox.TabIndex = 2;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(10, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 17);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "University:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(716, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 28);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Friday 12 January 2018";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.quitButton.Location = new System.Drawing.Point(12, 18);
+            this.quitButton.Name = "quitButton";
+            this.quitButton.Size = new System.Drawing.Size(119, 47);
+            this.quitButton.TabIndex = 0;
+            this.quitButton.Text = "Quit";
+            this.quitButton.UseVisualStyleBackColor = true;
+            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
             // MainScreen
             // 
@@ -301,7 +306,7 @@
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.universityLogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,9 +315,9 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox peopleListBox;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button quitButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -320,12 +325,12 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label universityNameLabel;
+        private System.Windows.Forms.PictureBox universityLogoPictureBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox universityComboBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label dateLabel;
     }
 }

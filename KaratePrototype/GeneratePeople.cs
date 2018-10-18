@@ -10,15 +10,19 @@ namespace KaratePrototype
 {
     class GeneratePeople
     {
+        public string connectionString;
+        public GeneratePeople()
+        {
+            connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
+        }
 
-        
         public void PopulateUniversities()
         {
             SqlCommand myCommand = new SqlCommand();
             List<int> universityIDList = new List<int>();
             List<int> universityReputationList = new List<int>();
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
+            conn.ConnectionString = connectionString;
             conn.Open();
             try
             {
@@ -107,23 +111,42 @@ namespace KaratePrototype
             return num;
         }
         
-        public void GenerateFaces()
+        public void GenerateFaces(int uniid)
         {
-            //Read uni id of player
 
-            //Get all students with that uni id
-            Random rnd = new Random();
-            int outputFileName=1;
+            SqlCommand myCommand = new SqlCommand();
+            List<int> peopleIDList = new List<int>();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = connectionString;
+            conn.Open();
+            try
+            {
+                string query = "SELECT PersonID FROM People WHERE UniversityID = @uniid";
+                myCommand = new SqlCommand(query, conn);
+                myCommand.Parameters.AddWithValue("@uniid", uniid);
+                SqlDataReader reader = myCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    peopleIDList.Add(reader.GetInt32(0));
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            conn.Close();
+
+            Random rnd = new Random();            
             List<Image> imageLayerList = new List<Image>() ;
             ImageCombiner combiner = new ImageCombiner();
             RandomFileGrabber grabber = new RandomFileGrabber();
 
-            //For Each Student
-            imageLayerList = grabber.SelectRandomImageFromDirectories(rnd);           
-            Bitmap faceImage = combiner.MergeImageLayers(imageLayerList);
-            combiner.SaveImage(faceImage, outputFileName);
-
-            //Save to db
+            foreach (var personid in peopleIDList)
+            {
+                imageLayerList = grabber.SelectRandomImageFromDirectories(rnd);
+                Bitmap faceImage = combiner.MergeImageLayers(imageLayerList);
+                combiner.SaveImage(faceImage, personid);
+            }      
 
         }
     }

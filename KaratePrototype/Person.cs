@@ -93,7 +93,6 @@ namespace KaratePrototype
             DateOfBirth = RandomDay(rnd);
         }
 
-
         DateTime RandomDay(Random rnd)
         {
             DateTime start = new DateTime(1998, 1, 1);

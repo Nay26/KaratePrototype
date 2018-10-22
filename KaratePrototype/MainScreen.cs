@@ -75,8 +75,8 @@ namespace KaratePrototype
 
         private void quitButton_Click(object sender, EventArgs e)
         {
-            Cleanup clean = new Cleanup();
-            clean.CleanFilesAndDB();
+            
+            Cleanup.CleanFilesAndDB();
             Application.Exit();
         }
 

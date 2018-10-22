@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace KaratePrototype
 {
-    class Cleanup
+   public class Cleanup
     {
-        public void CleanFilesAndDB()
+        public static void CleanFilesAndDB()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";

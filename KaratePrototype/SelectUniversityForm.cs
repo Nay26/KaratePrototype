@@ -64,7 +64,12 @@ namespace KaratePrototype
             SelectPlayerUniversity();
             GeneratePeople generatePeople = new GeneratePeople(databaseOperations);
             generatePeople.PopulateUniversities();
-            generatePeople.GenerateFaces(UniversityID);
+            foreach (var uni in databaseOperations.Universities)
+            {
+                Console.WriteLine("Generating Faces for " +  uni.Name);
+                generatePeople.GenerateFaces(uni.ID);
+            }
+            Console.WriteLine("Finished Generating Faces");
             generatePeople.GenerateKaratekaList();
             GoToMainScreen();
 
@@ -75,6 +80,8 @@ namespace KaratePrototype
 
             MainScreen main = new MainScreen();
             main.Show();
+            main.Left = this.Left;
+            main.Top = this.Top;
             this.Hide();
         }
 

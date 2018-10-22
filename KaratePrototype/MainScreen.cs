@@ -65,6 +65,7 @@ namespace KaratePrototype
         private void LoadUniversityName()
         {
             universityNameLabel.Text = PlayerUniversity.Name;
+            selectPlayerUniversityButton.Text = PlayerUniversity.Name;
         }
 
         private void LoadUniversityImage()
@@ -130,6 +131,11 @@ namespace KaratePrototype
         {
             currentDate = currentDate.AddDays(1);
             SetDate();
+        }
+
+        private void selectPlayerUniversityButton_Click(object sender, EventArgs e)
+        {
+            universityComboBox.SelectedItem = PlayerUniversity.Name;
         }
     }
 }

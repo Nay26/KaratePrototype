@@ -88,8 +88,8 @@ namespace KaratePrototype
                     Karateka karateka = new Karateka();
                     karateka.PersonID = reader.GetInt32(0);
                     karateka.UniversityID = reader.GetInt32(1);
-                    karateka.StartDate = reader.GetDateTime(2);
-                    tempGrade= reader.GetString(3);
+                    karateka.StartDate = reader.GetDateTime(3);
+                    tempGrade= reader.GetString(2);
                     switch (tempGrade)
                     {
                         case "10th kyu":

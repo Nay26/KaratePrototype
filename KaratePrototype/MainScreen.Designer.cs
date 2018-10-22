@@ -61,6 +61,7 @@
             this.universityLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.nextDayButton = new System.Windows.Forms.Button();
             this.quitButton = new System.Windows.Forms.Button();
+            this.selectPlayerUniversityButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -107,6 +108,7 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.splitContainer2.Panel1.Controls.Add(this.selectPlayerUniversityButton);
             this.splitContainer2.Panel1.Controls.Add(this.label10);
             this.splitContainer2.Panel1.Controls.Add(this.universityComboBox);
             this.splitContainer2.Panel1.Controls.Add(this.label2);
@@ -150,7 +152,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 9);
+            this.label2.Location = new System.Drawing.Point(8, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 28);
             this.label2.TabIndex = 1;
@@ -499,6 +501,16 @@
             this.quitButton.UseVisualStyleBackColor = true;
             this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
+            // selectPlayerUniversityButton
+            // 
+            this.selectPlayerUniversityButton.Location = new System.Drawing.Point(132, 9);
+            this.selectPlayerUniversityButton.Name = "selectPlayerUniversityButton";
+            this.selectPlayerUniversityButton.Size = new System.Drawing.Size(125, 37);
+            this.selectPlayerUniversityButton.TabIndex = 11;
+            this.selectPlayerUniversityButton.Text = "player university";
+            this.selectPlayerUniversityButton.UseVisualStyleBackColor = true;
+            this.selectPlayerUniversityButton.Click += new System.EventHandler(this.selectPlayerUniversityButton_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -562,5 +574,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button selectPlayerUniversityButton;
     }
 }

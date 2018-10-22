@@ -25,6 +25,7 @@ namespace KaratePrototype
         {
             LoadUniversities();
             LoadPeople();
+            LoadKaratekas();
         }
 
         public void LoadPeople()

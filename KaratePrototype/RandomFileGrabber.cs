@@ -18,8 +18,13 @@ namespace KaratePrototype
         {
             filePath = @".\Creation\Parts\";
             inputImageExtension = ".png";
-            layerDirectories.Add(@"Head\");
-            layerDirectories.Add(@"Hair\");
+            layerDirectories.Add(@"1.Background\");
+            layerDirectories.Add(@"2.SkinTone\");
+            layerDirectories.Add(@"3.Head\");
+            layerDirectories.Add(@"4.Mouth\");
+            layerDirectories.Add(@"5.Nose\");
+            layerDirectories.Add(@"6.Eyes\");
+            layerDirectories.Add(@"7.Hair\");
         }
 
         public RandomFileGrabber(string filepath, string inputimageextension, List<string> layerdirectories) : this()

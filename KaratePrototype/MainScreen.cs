@@ -10,6 +10,7 @@ namespace KaratePrototype
         DatabaseOperations databaseOperations = new DatabaseOperations();
         List<Person> currentlySelectedUniversityPeople = new List<Person>();
         Person SelectedPerson = new Person();
+        Karateka SelectedKarateka = new Karateka();
         DateTime currentDate = DateTime.Today;
 
         public MainScreen()
@@ -113,8 +114,20 @@ namespace KaratePrototype
         {
             int listIndex = peopleListBox.SelectedIndex;
             SelectedPerson = currentlySelectedUniversityPeople[listIndex];
-            personFirstNameLabel.Text = SelectedPerson.FirstName;
-            personSecondNameLabel.Text = SelectedPerson.SecondName;
+            
+            foreach (var karateka in databaseOperations.Karatekas)
+            {
+                if (SelectedPerson.ID == karateka.PersonID)
+                {
+                    SelectedKarateka = karateka;
+                    break;
+                }
+            }
+
+
+            personFullNameLabel.Text = SelectedPerson.FirstName + " " + SelectedPerson.SecondName;
+            
+
             personNationalityLabel.Text = SelectedPerson.Nationality;
             personHeightLabel.Text = SelectedPerson.Height.ToString();
             personDobLabel.Text = SelectedPerson.DateOfBirth.ToString("dd/MM/yyyy");
@@ -123,6 +136,9 @@ namespace KaratePrototype
             if (SelectedPerson.DateOfBirth > today.AddYears(-age)) age--;
             personAgeLabel.Text = age.ToString();
             personGenderLabel.Text = SelectedPerson.Gender.LongGender;
+            personDateJoinedLabel.Text = SelectedKarateka.StartDate.ToString("dd/MM/yyyy");
+            personGradeaLabel.Text = SelectedKarateka.Grade.GradeName;
+
             personPictureBox.ImageLocation = (@".\Creation\CreatedImages\" + SelectedPerson.ID + ".png");
             personPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
         }
@@ -137,5 +153,7 @@ namespace KaratePrototype
         {
             universityComboBox.SelectedItem = PlayerUniversity.Name;
         }
+
+
     }
 }

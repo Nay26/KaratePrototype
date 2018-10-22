@@ -30,6 +30,7 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.selectPlayerUniversityButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.universityComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,8 +46,8 @@
             this.personGenderLabel = new System.Windows.Forms.Label();
             this.personDobLabel = new System.Windows.Forms.Label();
             this.personAgeLabel = new System.Windows.Forms.Label();
-            this.personSecondNameLabel = new System.Windows.Forms.Label();
-            this.personFirstNameLabel = new System.Windows.Forms.Label();
+            this.personDateJoinedLabel = new System.Windows.Forms.Label();
+            this.personGradeaLabel = new System.Windows.Forms.Label();
             this.personNationalityLabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,13 +56,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.personFullNameLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.universityNameLabel = new System.Windows.Forms.Label();
             this.universityLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.nextDayButton = new System.Windows.Forms.Button();
             this.quitButton = new System.Windows.Forms.Button();
-            this.selectPlayerUniversityButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -123,10 +123,20 @@
             this.splitContainer2.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer2.Panel2.Controls.Add(this.label3);
+            this.splitContainer2.Panel2.Controls.Add(this.personFullNameLabel);
             this.splitContainer2.Size = new System.Drawing.Size(1129, 564);
             this.splitContainer2.SplitterDistance = 270;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // selectPlayerUniversityButton
+            // 
+            this.selectPlayerUniversityButton.Location = new System.Drawing.Point(132, 9);
+            this.selectPlayerUniversityButton.Name = "selectPlayerUniversityButton";
+            this.selectPlayerUniversityButton.Size = new System.Drawing.Size(125, 37);
+            this.selectPlayerUniversityButton.TabIndex = 11;
+            this.selectPlayerUniversityButton.Text = "player university";
+            this.selectPlayerUniversityButton.UseVisualStyleBackColor = true;
+            this.selectPlayerUniversityButton.Click += new System.EventHandler(this.selectPlayerUniversityButton_Click);
             // 
             // label10
             // 
@@ -229,20 +239,20 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.personHeightLabel, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.personGenderLabel, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.personDobLabel, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.personAgeLabel, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.personSecondNameLabel, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.personFirstNameLabel, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.personNationalityLabel, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.personNationalityLabel, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.personGradeaLabel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.personDateJoinedLabel, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.personDobLabel, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.personHeightLabel, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.personAgeLabel, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.personGenderLabel, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -263,9 +273,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.personHeightLabel.AutoSize = true;
             this.personHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personHeightLabel.Location = new System.Drawing.Point(126, 282);
+            this.personHeightLabel.Location = new System.Drawing.Point(126, 188);
             this.personHeightLabel.Name = "personHeightLabel";
-            this.personHeightLabel.Size = new System.Drawing.Size(50, 49);
+            this.personHeightLabel.Size = new System.Drawing.Size(50, 47);
             this.personHeightLabel.TabIndex = 6;
             this.personHeightLabel.Text = "Height:";
             this.personHeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -276,7 +286,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.personGenderLabel.AutoSize = true;
             this.personGenderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personGenderLabel.Location = new System.Drawing.Point(126, 235);
+            this.personGenderLabel.Location = new System.Drawing.Point(126, 94);
             this.personGenderLabel.Name = "personGenderLabel";
             this.personGenderLabel.Size = new System.Drawing.Size(56, 47);
             this.personGenderLabel.TabIndex = 5;
@@ -289,7 +299,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.personDobLabel.AutoSize = true;
             this.personDobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personDobLabel.Location = new System.Drawing.Point(126, 188);
+            this.personDobLabel.Location = new System.Drawing.Point(126, 235);
             this.personDobLabel.Name = "personDobLabel";
             this.personDobLabel.Size = new System.Drawing.Size(83, 47);
             this.personDobLabel.TabIndex = 4;
@@ -302,38 +312,38 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.personAgeLabel.AutoSize = true;
             this.personAgeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personAgeLabel.Location = new System.Drawing.Point(126, 141);
+            this.personAgeLabel.Location = new System.Drawing.Point(126, 0);
             this.personAgeLabel.Name = "personAgeLabel";
             this.personAgeLabel.Size = new System.Drawing.Size(36, 47);
             this.personAgeLabel.TabIndex = 3;
             this.personAgeLabel.Text = "Age:";
             this.personAgeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // personSecondNameLabel
+            // personDateJoinedLabel
             // 
-            this.personSecondNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.personDateJoinedLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.personSecondNameLabel.AutoSize = true;
-            this.personSecondNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personSecondNameLabel.Location = new System.Drawing.Point(126, 47);
-            this.personSecondNameLabel.Name = "personSecondNameLabel";
-            this.personSecondNameLabel.Size = new System.Drawing.Size(98, 47);
-            this.personSecondNameLabel.TabIndex = 1;
-            this.personSecondNameLabel.Text = "Second Name:";
-            this.personSecondNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.personDateJoinedLabel.AutoSize = true;
+            this.personDateJoinedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personDateJoinedLabel.Location = new System.Drawing.Point(126, 282);
+            this.personDateJoinedLabel.Name = "personDateJoinedLabel";
+            this.personDateJoinedLabel.Size = new System.Drawing.Size(78, 49);
+            this.personDateJoinedLabel.TabIndex = 1;
+            this.personDateJoinedLabel.Text = "DateJoined";
+            this.personDateJoinedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // personFirstNameLabel
+            // personGradeaLabel
             // 
-            this.personFirstNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.personGradeaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.personFirstNameLabel.AutoSize = true;
-            this.personFirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personFirstNameLabel.Location = new System.Drawing.Point(126, 0);
-            this.personFirstNameLabel.Name = "personFirstNameLabel";
-            this.personFirstNameLabel.Size = new System.Drawing.Size(76, 47);
-            this.personFirstNameLabel.TabIndex = 0;
-            this.personFirstNameLabel.Text = "First Name:";
-            this.personFirstNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.personGradeaLabel.AutoSize = true;
+            this.personGradeaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personGradeaLabel.Location = new System.Drawing.Point(126, 47);
+            this.personGradeaLabel.Name = "personGradeaLabel";
+            this.personGradeaLabel.Size = new System.Drawing.Size(46, 47);
+            this.personGradeaLabel.TabIndex = 0;
+            this.personGradeaLabel.Text = "Grade";
+            this.personGradeaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // personNationalityLabel
             // 
@@ -341,7 +351,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.personNationalityLabel.AutoSize = true;
             this.personNationalityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personNationalityLabel.Location = new System.Drawing.Point(126, 94);
+            this.personNationalityLabel.Location = new System.Drawing.Point(126, 141);
             this.personNationalityLabel.Name = "personNationalityLabel";
             this.personNationalityLabel.Size = new System.Drawing.Size(74, 47);
             this.personNationalityLabel.TabIndex = 2;
@@ -354,11 +364,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(30, 0);
+            this.label12.Location = new System.Drawing.Point(62, 47);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 47);
+            this.label12.Size = new System.Drawing.Size(58, 47);
             this.label12.TabIndex = 13;
-            this.label12.Text = "First Name:";
+            this.label12.Text = "Grade:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label11
@@ -367,11 +377,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 47);
+            this.label11.Location = new System.Drawing.Point(24, 282);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(114, 47);
+            this.label11.Size = new System.Drawing.Size(96, 49);
             this.label11.TabIndex = 12;
-            this.label11.Text = "Second Name:";
+            this.label11.Text = "Joined Club:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
@@ -380,7 +390,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(34, 94);
+            this.label7.Location = new System.Drawing.Point(34, 141);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 47);
             this.label7.TabIndex = 11;
@@ -393,7 +403,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(78, 141);
+            this.label6.Location = new System.Drawing.Point(78, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 47);
             this.label6.TabIndex = 10;
@@ -406,7 +416,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 188);
+            this.label5.Location = new System.Drawing.Point(17, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 47);
             this.label5.TabIndex = 9;
@@ -419,7 +429,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(53, 235);
+            this.label4.Location = new System.Drawing.Point(53, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 47);
             this.label4.TabIndex = 8;
@@ -432,22 +442,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 282);
+            this.label1.Location = new System.Drawing.Point(60, 188);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 49);
+            this.label1.Size = new System.Drawing.Size(60, 47);
             this.label1.TabIndex = 7;
             this.label1.Text = "Height:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // personFullNameLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(220, 28);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Persons Name Here";
+            this.personFullNameLabel.AutoSize = true;
+            this.personFullNameLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personFullNameLabel.Location = new System.Drawing.Point(32, 9);
+            this.personFullNameLabel.Name = "personFullNameLabel";
+            this.personFullNameLabel.Size = new System.Drawing.Size(220, 28);
+            this.personFullNameLabel.TabIndex = 0;
+            this.personFullNameLabel.Text = "Persons Name Here";
             // 
             // dateLabel
             // 
@@ -501,16 +511,6 @@
             this.quitButton.UseVisualStyleBackColor = true;
             this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
-            // selectPlayerUniversityButton
-            // 
-            this.selectPlayerUniversityButton.Location = new System.Drawing.Point(132, 9);
-            this.selectPlayerUniversityButton.Name = "selectPlayerUniversityButton";
-            this.selectPlayerUniversityButton.Size = new System.Drawing.Size(125, 37);
-            this.selectPlayerUniversityButton.TabIndex = 11;
-            this.selectPlayerUniversityButton.Text = "player university";
-            this.selectPlayerUniversityButton.UseVisualStyleBackColor = true;
-            this.selectPlayerUniversityButton.Click += new System.EventHandler(this.selectPlayerUniversityButton_Click);
-            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,7 +552,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label personFullNameLabel;
         private System.Windows.Forms.Label universityNameLabel;
         private System.Windows.Forms.PictureBox universityLogoPictureBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -560,8 +560,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox universityComboBox;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.Label personFirstNameLabel;
-        private System.Windows.Forms.Label personSecondNameLabel;
+        private System.Windows.Forms.Label personGradeaLabel;
+        private System.Windows.Forms.Label personDateJoinedLabel;
         private System.Windows.Forms.Label personNationalityLabel;
         private System.Windows.Forms.Label personAgeLabel;
         private System.Windows.Forms.Label personDobLabel;

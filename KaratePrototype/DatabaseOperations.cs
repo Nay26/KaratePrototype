@@ -196,9 +196,9 @@ namespace KaratePrototype
 
         public void InsertPeople()
         {
+            conn.Open();
             foreach (var person in People)
-            {
-                conn.Open();
+            { 
                 try
                 {
                     string query = "INSERT INTO People (UniversityID, FirstName, SecondName, Nationality, Height, DateOfBirth, Gender) VALUES (@uniid, @firstname,@secondname,@nationality,@height,@dateofbirth,@gender);";
@@ -211,21 +211,21 @@ namespace KaratePrototype
                     myCommand.Parameters.AddWithValue("@dateofbirth", person.DateOfBirth);
                     myCommand.Parameters.AddWithValue("@gender", person.Gender.LongGender);
                     myCommand.ExecuteNonQuery();
-
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.ToString());
                 }
-                conn.Close();
+              
             }
+            conn.Close();
         }
 
         public void InsertKaratekas()
         {
+            conn.Open();
             foreach (var karateka in Karatekas)
             {
-                conn.Open();
                 try
                 {
                     string query = "INSERT INTO Karatekas (PersonID, UniversityID, Grade, StartDate) VALUES (@personid, @uniid, @grade ,@startdate);";
@@ -241,8 +241,8 @@ namespace KaratePrototype
                 {
                     Console.WriteLine(e.ToString());
                 }
-                conn.Close();
             }
+            conn.Close();
         }
 
 

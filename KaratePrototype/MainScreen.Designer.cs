@@ -196,7 +196,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Location = new System.Drawing.Point(570, 49);
+            this.groupBox4.Location = new System.Drawing.Point(611, 49);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(232, 498);
             this.groupBox4.TabIndex = 3;
@@ -205,7 +205,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(332, 49);
+            this.groupBox3.Location = new System.Drawing.Point(337, 49);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(232, 498);
             this.groupBox3.TabIndex = 2;

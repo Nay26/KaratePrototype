@@ -19,10 +19,17 @@ namespace KaratePrototype
             string query = "DELETE FROM People";
             SqlCommand myCommand = new SqlCommand(query, conn);
             myCommand.ExecuteNonQuery();
+
             query = "DELETE FROM Universities";
             myCommand = new SqlCommand(query, conn);
             myCommand.ExecuteNonQuery();
+
+            query = "DELETE FROM Karatekas";
+            myCommand = new SqlCommand(query, conn);
+            myCommand.ExecuteNonQuery();
             conn.Close();
+
+
             System.IO.DirectoryInfo di = new DirectoryInfo(@".\Creation\CreatedImages");
 
             foreach (FileInfo file in di.GetFiles())

@@ -80,5 +80,20 @@ namespace KaratePrototype
             }      
 
         }
+
+        public void GenerateKaratekaList()
+        {
+            Random rnd = new Random();
+            foreach (var person in databaseOperations.People)
+            {
+                Karateka karateka = new Karateka(rnd);
+                karateka.PersonID = person.ID;
+                karateka.UniversityID = person.UniversityID;
+                databaseOperations.Karatekas.Add(karateka);
+            }
+            databaseOperations.InsertKaratekas();
+            databaseOperations.LoadKaratekas();
+        }
+
     }
 }

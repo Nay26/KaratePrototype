@@ -64,7 +64,10 @@
     <Compile Include="Cleanup.cs" />
     <Compile Include="DatabaseOperations.cs" />
     <Compile Include="GeneratePeople.cs" />
+    <Compile Include="Grade.cs" />
+    <Compile Include="IGrade.cs" />
     <Compile Include="ImageCombiner.cs" />
+    <Compile Include="Karateka.cs" />
     <Compile Include="KaratePrototypeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

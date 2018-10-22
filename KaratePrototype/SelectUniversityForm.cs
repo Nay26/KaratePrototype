@@ -65,6 +65,7 @@ namespace KaratePrototype
             GeneratePeople generatePeople = new GeneratePeople(databaseOperations);
             generatePeople.PopulateUniversities();
             generatePeople.GenerateFaces(UniversityID);
+            generatePeople.GenerateKaratekaList();
             GoToMainScreen();
 
         }

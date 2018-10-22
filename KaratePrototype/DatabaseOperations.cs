@@ -12,6 +12,7 @@ namespace KaratePrototype
         public SqlConnection conn;
         public List<University> Universities = new List<University>();
         public List<Person> People = new List<Person>();
+        public List<Karateka> Karatekas = new List<Karateka>();
 
         public DatabaseOperations()
         {
@@ -63,6 +64,54 @@ namespace KaratePrototype
                             break;
                     }
                     People.Add(person);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            conn.Close();
+        }
+
+        public void LoadKaratekas()
+        {
+            Karatekas.Clear();
+            string query = "SELECT * FROM Karatekas";
+            string tempGrade;
+            conn.Open();
+            try
+            {
+                myCommand = new SqlCommand(query, conn);
+                SqlDataReader reader = myCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    Karateka karateka = new Karateka();
+                    karateka.PersonID = reader.GetInt32(0);
+                    karateka.UniversityID = reader.GetInt32(1);
+                    karateka.StartDate = reader.GetDateTime(2);
+                    tempGrade= reader.GetString(3);
+                    switch (tempGrade)
+                    {
+                        case "10th kyu":
+                            karateka.Grade = new WhiteBelt();
+                            break;
+                        case "9th kyu":
+                            karateka.Grade = new OrangeBelt();
+                            break;
+                        case "8th kyu":
+                            karateka.Grade = new RedBelt();
+                            break;
+                        case "7th kyu":
+                            karateka.Grade = new YellowBelt();
+                            break;
+                        case "6th kyu":
+                            karateka.Grade = new GreenBelt();
+                            break;
+                        default:
+                            karateka.Grade = new WhiteBelt();
+                            break;
+                    }
+                    Karatekas.Add(karateka);
                 }
             }
             catch (Exception e)
@@ -160,6 +209,30 @@ namespace KaratePrototype
                     myCommand.Parameters.AddWithValue("@height", person.Height);
                     myCommand.Parameters.AddWithValue("@dateofbirth", person.DateOfBirth);
                     myCommand.Parameters.AddWithValue("@gender", person.Gender.LongGender);
+                    myCommand.ExecuteNonQuery();
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+                conn.Close();
+            }
+        }
+
+        public void InsertKaratekas()
+        {
+            foreach (var karateka in Karatekas)
+            {
+                conn.Open();
+                try
+                {
+                    string query = "INSERT INTO Karatekas (PersonID, UniversityID, Grade, StartDate) VALUES (@personid, @uniid, @grade ,@startdate);";
+                    myCommand = new SqlCommand(query, conn);
+                    myCommand.Parameters.AddWithValue("@personid", karateka.PersonID);
+                    myCommand.Parameters.AddWithValue("@uniid", karateka.UniversityID);
+                    myCommand.Parameters.AddWithValue("@grade", karateka.Grade.GradeName);
+                    myCommand.Parameters.AddWithValue("@startdate", karateka.StartDate);
                     myCommand.ExecuteNonQuery();
 
                 }

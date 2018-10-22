@@ -1,22 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KaratePrototype
 {
     class Person
     {
-
+        public int ID { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public IGender Gender { get; set; }
         public string Nationality { get; set; }
         public double Height { get; set; }
+        public int UniversityID { get; set; }
 
-        public Person(Random rnd)
+        public Person()
+        {
+
+        }
+
+        public Person(Random rnd) : this()
         {
            
             GenerateGender(rnd);

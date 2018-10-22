@@ -1,95 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KaratePrototype
 {
     class GeneratePeople
     {
         public string connectionString;
-        public GeneratePeople()
+        DatabaseOperations databaseOperations;
+
+        public GeneratePeople(DatabaseOperations dataOp)
         {
+            databaseOperations = dataOp;
             connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
         }
 
         public void PopulateUniversities()
         {
-            SqlCommand myCommand = new SqlCommand();
             List<int> universityIDList = new List<int>();
             List<int> universityReputationList = new List<int>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = connectionString;
-            conn.Open();
-            try
+            foreach (var uni in databaseOperations.Universities)
             {
-                string query = "SELECT UniversityID, UniversityReputation FROM Universities";
-                myCommand = new SqlCommand(query, conn);
-                SqlDataReader reader = myCommand.ExecuteReader();
-                while (reader.Read())
-                {
-                        universityIDList.Add(reader.GetInt32(0));
-                        universityReputationList.Add(reader.GetInt32(1));
-                }
+                universityIDList.Add(uni.ID);
+                universityReputationList.Add(uni.Reputation);
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            conn.Close();
-
-            int uniid = 0;
-            string firstname = "";
-            string secondname = "";
-            string nationality = "";
-            double height;
-            DateTime dateofbirth;
-            string gender;
-            conn.Open();
-            // For every university in database
             Random rnd = new Random();
-            List<Person> peopleList = new List<Person>();
+            List<Person> uniPeopleList = new List<Person>();
+            List<Person> allPeopleList = new List<Person>();
             for (int i = 0; i < universityIDList.Count; i++)
             {
-                // Add people list to that university
-                peopleList =  GeneratePeopleList(universityIDList[i],universityReputationList[i],rnd);
-                for (int j = 0; j < peopleList.Count; j++)
-                {
-                    firstname = peopleList[j].FirstName;
-                    secondname = peopleList[j].SecondName;
-                    nationality = peopleList[j].Nationality;
-                    height = peopleList[j].Height;
-                    dateofbirth = peopleList[j].DateOfBirth;
-                    gender = peopleList[j].Gender.LongGender;
-                    uniid = universityIDList[i];
-
-                    try
-                    {
-                        string query = "INSERT INTO People (UniversityID, FirstName, SecondName, Nationality, Height, DateOfBirth, Gender) VALUES (@uniid, @firstname,@secondname,@nationality,@height,@dateofbirth,@gender);";
-                        myCommand = new SqlCommand(query, conn);
-                        myCommand.Parameters.AddWithValue("@uniid", uniid);
-                        myCommand.Parameters.AddWithValue("@firstname", firstname);
-                        myCommand.Parameters.AddWithValue("@secondname", secondname);
-                        myCommand.Parameters.AddWithValue("@nationality", nationality);
-                        myCommand.Parameters.AddWithValue("@height", height);
-                        myCommand.Parameters.AddWithValue("@dateofbirth", dateofbirth);
-                        myCommand.Parameters.AddWithValue("@gender", gender);
-                        myCommand.ExecuteNonQuery();
-                        
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.ToString());
-                    }
-                 
-                }              
+                uniPeopleList =  GeneratePeopleList(universityIDList[i],universityReputationList[i],rnd);
+                allPeopleList.AddRange(uniPeopleList);
             }
-            conn.Close();
-            Console.WriteLine("People Generated");
-
+            databaseOperations.People = allPeopleList;
+            databaseOperations.SavePeople();
+            databaseOperations.LoadPeople();
         }
 
         private List<Person> GeneratePeopleList(int uniID, int uniRep, Random rnd)
@@ -98,8 +43,8 @@ namespace KaratePrototype
             int numberToGen = GenerateNumberOfPeople(uniID, uniRep);
             for (int i = 0; i < numberToGen; i++)
             {
-  
-                Person person = new Person(rnd);       
+                Person person = new Person(rnd);
+                person.UniversityID = uniID;
                 peopleList.Add(person);      
             }         
             return peopleList;
@@ -113,28 +58,14 @@ namespace KaratePrototype
         
         public void GenerateFaces(int uniid)
         {
-
-            SqlCommand myCommand = new SqlCommand();
             List<int> peopleIDList = new List<int>();
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = connectionString;
-            conn.Open();
-            try
+            foreach (var person in databaseOperations.People)
             {
-                string query = "SELECT PersonID FROM People WHERE UniversityID = @uniid";
-                myCommand = new SqlCommand(query, conn);
-                myCommand.Parameters.AddWithValue("@uniid", uniid);
-                SqlDataReader reader = myCommand.ExecuteReader();
-                while (reader.Read())
+                if (person.UniversityID == uniid)
                 {
-                    peopleIDList.Add(reader.GetInt32(0));
+                    peopleIDList.Add(person.ID);
                 }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            conn.Close();
 
             Random rnd = new Random();            
             List<Image> imageLayerList = new List<Image>() ;

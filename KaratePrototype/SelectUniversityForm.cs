@@ -12,71 +12,28 @@ namespace KaratePrototype
 
         public int UniversityID;
         public string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
+        DatabaseOperations databaseOperations = new DatabaseOperations();
+
         public SelectUniversityForm()
         {
             InitializeComponent();
+            databaseOperations.InsertUniversityXmlData();
+            databaseOperations.LoadUniversities();
             PopulateUniversityListbox();
-            PopulateUniversityDataBase();
-            
         }
 
         private void PopulateUniversityListbox()
         {
-      
-            XmlDocument xml = new XmlDocument();
-            xml.Load(@".\UniversitiesXML.xml");
-            XmlNodeList reminders = xml.SelectNodes("//University");
             List<string> uniList = new List<string>();
-            foreach (XmlNode reminder in reminders)
+            foreach (University uni in databaseOperations.Universities)
             {
-                uniList.Add(reminder.SelectSingleNode("name").InnerText);                                  
+                uniList.Add(uni.Name);
             }
             uniList.Sort();
             universityListBox.DataSource = uniList;
         }
-
-        private void PopulateUniversityDataBase()
-        {
-            string name = "";
-            string location = "";
-            int reputation = 0;
-            string budget = "";
-            string logo = "";
-            int points = 0;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = connectionString;
-            conn.Open();
-            XmlDocument xml = new XmlDocument();
-            xml.Load(@".\UniversitiesXML.xml");
-            XmlNodeList reminders = xml.SelectNodes("//University");            
-            foreach (XmlNode reminder in reminders)
-            {
-                name = (reminder.SelectSingleNode("name").InnerText);
-                location = (reminder.SelectSingleNode("location").InnerText);
-                reputation = Int32.Parse(reminder.SelectSingleNode("reputation").InnerText);
-                points = Int32.Parse(reminder.SelectSingleNode("bucspoints").InnerText);
-                budget = (reminder.SelectSingleNode("budget").InnerText);
-                logo = (reminder.SelectSingleNode("photopath").InnerText);
-                try
-                {
-                    string query = "INSERT INTO Universities (UniversityName, UniversityLocation, UniversityReputation, UniversityBudget, UniversityLogo, UniversityBUCSPoints) VALUES (@name,@location,@reputation,@budget,@logo,@points);";
-                    SqlCommand myCommand = new SqlCommand(query, conn);
-                    myCommand.Parameters.AddWithValue("@name", name);
-                    myCommand.Parameters.AddWithValue("@location", location);
-                    myCommand.Parameters.AddWithValue("@reputation", reputation);
-                    myCommand.Parameters.AddWithValue("@budget", budget);
-                    myCommand.Parameters.AddWithValue("@logo", logo);
-                    myCommand.Parameters.AddWithValue("@points", points);
-                    myCommand.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.ToString());
-                }
-            }
-            conn.Close();
-        }
-
+       
+        // Change this at some point depending on if want to store the uni description in the database.
         private void universityListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -104,10 +61,10 @@ namespace KaratePrototype
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            int uniId = SelectPlayerUniversity();
-            GeneratePeople startGameGen = new GeneratePeople();
-            startGameGen.PopulateUniversities();
-            startGameGen.GenerateFaces(uniId);
+            SelectPlayerUniversity();
+            GeneratePeople generatePeople = new GeneratePeople(databaseOperations);
+            generatePeople.PopulateUniversities();
+            generatePeople.GenerateFaces(UniversityID);
             GoToMainScreen();
 
         }
@@ -120,44 +77,30 @@ namespace KaratePrototype
             this.Hide();
         }
 
-        private int SelectPlayerUniversity()
+        private void SelectPlayerUniversity()
         {
             string name = universityNameLabel.Text;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = connectionString; conn.Open();
-            try
+            string uniLogoString = "";
+            foreach (var uni in databaseOperations.Universities)
             {
-                string query = "SELECT UniversityID, UniversityLogo FROM Universities WHERE UniversityName = @name";
-                SqlCommand myCommand = new SqlCommand(query, conn);
-                myCommand.Parameters.AddWithValue("@name", name);
-                using (SqlDataReader reader = myCommand.ExecuteReader())
+                if (uni.Name.Equals(name))
                 {
-                    if (reader.Read())
-                    {
-                        string uniLogoString = String.Format("{0}", reader["UniversityLogo"]);
-                        string uniIDString = String.Format("{0}", reader["UniversityID"]);
-                        UniversityID = Int32.Parse(uniIDString);
-                        using (StreamWriter outputFile = new StreamWriter(@".\University.txt"))
-                        {
-                            outputFile.WriteLine(uniIDString);
-                            outputFile.WriteLine(name);
-                            outputFile.WriteLine(uniLogoString);
-                        }
-                    }
+                    uniLogoString = uni.Logo;
+                    int UniversityID = uni.ID;
+                    break;
                 }
             }
-            catch (Exception e)
+            using (StreamWriter outputFile = new StreamWriter(@".\University.txt"))
             {
-                Console.WriteLine(e.ToString());
+                outputFile.WriteLine(UniversityID);
+                outputFile.WriteLine(name);
+                outputFile.WriteLine(uniLogoString);
             }
-            conn.Close();
-            return UniversityID;
         }
 
         private void quitButton_Click(object sender, EventArgs e)
         {
-            Cleanup clean = new Cleanup();
-            clean.CleanFilesAndDB();
+            Cleanup.CleanFilesAndDB();
             Application.Exit();
         }
         

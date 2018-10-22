@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace KaratePrototype
 {
@@ -16,8 +8,10 @@ namespace KaratePrototype
     {
         University PlayerUniversity;
         DatabaseOperations databaseOperations = new DatabaseOperations();
+        List<Person> currentlySelectedUniversityPeople = new List<Person>();
+        Person SelectedPerson = new Person();
+        DateTime currentDate = DateTime.Today;
 
-        // FirstTime Load
         public MainScreen()
         {
             InitializeComponent();
@@ -26,7 +20,7 @@ namespace KaratePrototype
             PopulateUniversityComboBox();
             LoadUniversityImage();
             LoadUniversityName();
-            SetDate();
+            SetDate();          
         }
 
         public void LoadData()
@@ -65,7 +59,7 @@ namespace KaratePrototype
 
         private void SetDate()
         {
-            dateLabel.Text = DateTime.Today.ToString("D");
+            dateLabel.Text = currentDate.ToString("D");
         }
 
         private void LoadUniversityName()
@@ -99,17 +93,43 @@ namespace KaratePrototype
                 }
             }
 
+            currentlySelectedUniversityPeople.Clear();
             List<string> peopleNameList = new List<string>();
             foreach (var person in databaseOperations.People)
             {
                 if (person.UniversityID == universityID)
                 {
+                    currentlySelectedUniversityPeople.Add(person);
                     peopleNameList.Add(person.FirstName + " " + person.SecondName);
                 }
             }
 
             peopleListBox.DataSource = peopleNameList;
 
+        }
+
+        private void peopleListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int listIndex = peopleListBox.SelectedIndex;
+            SelectedPerson = currentlySelectedUniversityPeople[listIndex];
+            personFirstNameLabel.Text = SelectedPerson.FirstName;
+            personSecondNameLabel.Text = SelectedPerson.SecondName;
+            personNationalityLabel.Text = SelectedPerson.Nationality;
+            personHeightLabel.Text = SelectedPerson.Height.ToString();
+            personDobLabel.Text = SelectedPerson.DateOfBirth.ToString("dd/MM/yyyy");
+            var today = DateTime.Today;
+            var age = today.Year - SelectedPerson.DateOfBirth.Year;
+            if (SelectedPerson.DateOfBirth > today.AddYears(-age)) age--;
+            personAgeLabel.Text = age.ToString();
+            personGenderLabel.Text = SelectedPerson.Gender.LongGender;
+            personPictureBox.ImageLocation = (@".\Creation\CreatedImages\" + SelectedPerson.ID + ".png");
+            personPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+        }
+
+        private void nextDayButton_Click(object sender, EventArgs e)
+        {
+            currentDate = currentDate.AddDays(1);
+            SetDate();
         }
     }
 }

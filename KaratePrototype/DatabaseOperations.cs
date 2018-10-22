@@ -41,12 +41,12 @@ namespace KaratePrototype
                     Person person = new Person();
                     person.ID = reader.GetInt32(0);
                     person.UniversityID = reader.GetInt32(1);
-                    person.FirstName = reader.GetString(1);
-                    person.SecondName = reader.GetString(2);
-                    person.Nationality = reader.GetString(3);
-                    person.Height = reader.GetDouble(4);
-                    person.DateOfBirth = reader.GetDateTime(4);
-                    tempGender = reader.GetString(6);
+                    person.FirstName = reader.GetString(2);
+                    person.SecondName = reader.GetString(3);
+                    person.Nationality = reader.GetString(4);
+                    person.Height = reader.GetDouble(5);
+                    person.DateOfBirth = reader.GetDateTime(6);
+                    tempGender = reader.GetString(7);
                     switch (tempGender)
                     {
                         case "Male":
@@ -144,7 +144,7 @@ namespace KaratePrototype
             conn.Close();
         }
 
-        public void SavePeople()
+        public void InsertPeople()
         {
             foreach (var person in People)
             {
@@ -170,6 +170,8 @@ namespace KaratePrototype
                 conn.Close();
             }
         }
+
+
     }
 
 }

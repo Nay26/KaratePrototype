@@ -14,18 +14,53 @@ namespace KaratePrototype
 {
     public partial class MainScreen : Form
     {
-        public int UniversityID;
-        public string UniversityName;
-        public string UniversityLogo;
-        public string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
+        University PlayerUniversity;
+        DatabaseOperations databaseOperations = new DatabaseOperations();
+
+        // FirstTime Load
         public MainScreen()
         {
             InitializeComponent();
+            LoadData();
             RetrivePlayerUniversityInfo();
             PopulateUniversityComboBox();
             LoadUniversityImage();
             LoadUniversityName();
             SetDate();
+        }
+
+        public void LoadData()
+        {
+            databaseOperations.LoadDatabaseData();
+        }
+
+        private void RetrivePlayerUniversityInfo()
+        {
+            string line;
+            System.IO.StreamReader file = new System.IO.StreamReader(@".\University.txt");
+            line = file.ReadLine();
+            int universityID = Int32.Parse(line);
+            file.Close();
+            foreach (var uni in databaseOperations.Universities)
+            {
+                if (uni.ID == universityID)
+                {
+                    PlayerUniversity = uni;
+                    break;
+                }
+            }
+        }
+
+        private void PopulateUniversityComboBox()
+        {
+            List<string> uniList = new List<string>();
+            foreach (University uni in databaseOperations.Universities)
+            {
+                uniList.Add(uni.Name);
+            }
+            uniList.Sort();
+            universityComboBox.DataSource = uniList;
+            universityComboBox.SelectedIndex = universityComboBox.FindStringExact(PlayerUniversity.Name);
         }
 
         private void SetDate()
@@ -35,43 +70,14 @@ namespace KaratePrototype
 
         private void LoadUniversityName()
         {
-            universityNameLabel.Text = UniversityName;
+            universityNameLabel.Text = PlayerUniversity.Name;
         }
 
         private void LoadUniversityImage()
         {
-            universityLogoPictureBox.ImageLocation = (@".\UniversityLogos\" + UniversityLogo + ".png");
+            universityLogoPictureBox.ImageLocation = (@".\UniversityLogos\" + PlayerUniversity.Logo + ".png");
             universityLogoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-        }
-
-        private void RetrivePlayerUniversityInfo()
-        {
-            string line;
-            System.IO.StreamReader file = new System.IO.StreamReader(@".\University.txt");
-            line = file.ReadLine();
-            UniversityID = Int32.Parse(line);
-            UniversityName = file.ReadLine(); 
-            UniversityLogo = file.ReadLine(); ;
-            file.Close();
-
-        }
-
-        private void PopulateUniversityComboBox()
-        {
-
-            XmlDocument xml = new XmlDocument();
-            xml.Load(@".\UniversitiesXML.xml");
-            XmlNodeList reminders = xml.SelectNodes("//University");
-            List<string> uniList = new List<string>();
-            foreach (XmlNode reminder in reminders)
-            {
-                uniList.Add(reminder.SelectSingleNode("name").InnerText);
-            }
-            uniList.Sort();
-            universityComboBox.DataSource = uniList;
-            universityComboBox.SelectedIndex = universityComboBox.FindStringExact(UniversityName);
-
-        }
+        }        
 
         private void quitButton_Click(object sender, EventArgs e)
         {
@@ -83,22 +89,25 @@ namespace KaratePrototype
         private void universityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            SqlCommand myCommand = new SqlCommand();
-            SqlConnection conn = new SqlConnection();
-            List<string> peopleNameList = new List<string>();
-            List<int> peopleIDList = new List<int>();     
-            conn.ConnectionString = connectionString;
-            conn.Open();
-            string query = "SELECT People.PersonID, People.FirstName, People.SecondName FROM People INNER JOIN Universities ON People.UniversityID = Universities.UniversityID WHERE Universities.UniversityName = @uniname";
-            myCommand = new SqlCommand(query, conn);
-            myCommand.Parameters.AddWithValue("@uniname", universityComboBox.Text);
-            SqlDataReader reader = myCommand.ExecuteReader();
-            while (reader.Read())
+            int universityID = 0;
+            foreach (var uni in databaseOperations.Universities)
             {
-                peopleIDList.Add(reader.GetInt32(0));
-                peopleNameList.Add(reader.GetString(1) + " " + reader.GetString(2));
+                if (uni.Name.Equals(universityComboBox.Text))
+                {
+                    universityID = uni.ID;
+                    break;
+                }
             }
-            conn.Close();
+
+            List<string> peopleNameList = new List<string>();
+            foreach (var person in databaseOperations.People)
+            {
+                if (person.UniversityID == universityID)
+                {
+                    peopleNameList.Add(person.FirstName + " " + person.SecondName);
+                }
+            }
+
             peopleListBox.DataSource = peopleNameList;
 
         }

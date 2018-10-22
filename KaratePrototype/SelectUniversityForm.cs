@@ -69,7 +69,7 @@ namespace KaratePrototype
 
         }
 
-        private void GoToMainScreen()
+        public void GoToMainScreen()
         {
 
             MainScreen main = new MainScreen();
@@ -86,15 +86,13 @@ namespace KaratePrototype
                 if (uni.Name.Equals(name))
                 {
                     uniLogoString = uni.Logo;
-                    int UniversityID = uni.ID;
+                    UniversityID = uni.ID;
                     break;
                 }
             }
             using (StreamWriter outputFile = new StreamWriter(@".\University.txt"))
             {
                 outputFile.WriteLine(UniversityID);
-                outputFile.WriteLine(name);
-                outputFile.WriteLine(uniLogoString);
             }
         }
 

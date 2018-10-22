@@ -33,7 +33,7 @@ namespace KaratePrototype
                 allPeopleList.AddRange(uniPeopleList);
             }
             databaseOperations.People = allPeopleList;
-            databaseOperations.SavePeople();
+            databaseOperations.InsertPeople();
             databaseOperations.LoadPeople();
         }
 

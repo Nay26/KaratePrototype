@@ -78,7 +78,9 @@ namespace KaratePrototype
                 Bitmap faceImage = combiner.MergeImageLayers(imageLayerList);
                 combiner.SaveImage(faceImage, personid);
                 faceImage.Dispose();
-            }      
+            }
+            imageLayerList.Clear();
+            imageLayerList.TrimExcess();
 
         }
 
@@ -98,10 +100,18 @@ namespace KaratePrototype
 
         public void GeneratePrimaryStatBlockList()
         {
+            IGrade grade = new WhiteBelt() ;
             Random rnd = new Random();
             foreach (var person in databaseOperations.People)
             {
-                PrimaryStatBlock primaryStatBlock = new PrimaryStatBlock(rnd);
+                foreach (var karateka in databaseOperations.Karatekas)
+                {
+                    if (karateka.PersonID == person.ID)
+                    {
+                        grade = karateka.Grade;
+                    }
+                }
+                PrimaryStatBlock primaryStatBlock = new PrimaryStatBlock(rnd,grade);
                 primaryStatBlock.PersonID = person.ID;
                 databaseOperations.PrimaryStatBlocks.Add(primaryStatBlock);
             }

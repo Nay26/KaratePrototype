@@ -49,7 +49,7 @@ namespace KaratePrototype
                     Console.WriteLine("Error, invalid extension supplied.");
                     break;
             }
-            output.Dispose();
+           output.Dispose();
         }
 
         public Bitmap MergeImageLayers(List<Image> layers)
@@ -65,6 +65,8 @@ namespace KaratePrototype
                     new Rectangle(new Point(), image.Size), GraphicsUnit.Pixel);
                 }
             }
+            layers.Clear();
+            layers.TrimExcess();
             return outputImage;
         }
     }

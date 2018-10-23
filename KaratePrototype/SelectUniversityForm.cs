@@ -79,7 +79,7 @@ namespace KaratePrototype
             generatePeople.PopulateUniversities();
             //foreach (var uni in databaseOperations.Universities)
             //{
-            //    Console.WriteLine("Generating Faces for " +  uni.Name);
+            //    Console.WriteLine("Generating Faces for " + uni.Name);
             //    generatePeople.GenerateFaces(uni.ID);
             //}
             generatePeople.GenerateFaces(UniversityID);

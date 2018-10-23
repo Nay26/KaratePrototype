@@ -27,9 +27,11 @@ namespace KaratePrototype
 
         private void GenerateStats(Random rnd, IGrade grade)
         {
-            Speed.Level = 50;
-            Power.Level = 50;
-            Stamina.Level = 50;
+            int average = grade.AverageStat;
+            int difference = 5;
+            Speed.Level = rnd.Next(average-difference,average+difference);
+            Power.Level = rnd.Next(average - difference, average + difference);
+            Stamina.Level = rnd.Next(average - difference, average + difference);
         }
     }
 }

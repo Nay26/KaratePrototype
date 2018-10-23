@@ -42,26 +42,33 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.personHeightLabel = new System.Windows.Forms.Label();
-            this.personGenderLabel = new System.Windows.Forms.Label();
-            this.personDobLabel = new System.Windows.Forms.Label();
-            this.personAgeLabel = new System.Windows.Forms.Label();
-            this.personDateJoinedLabel = new System.Windows.Forms.Label();
-            this.personGradeaLabel = new System.Windows.Forms.Label();
             this.personNationalityLabel = new System.Windows.Forms.Label();
+            this.personGradeaLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.personDateJoinedLabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.personDobLabel = new System.Windows.Forms.Label();
+            this.personHeightLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.personAgeLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.personGenderLabel = new System.Windows.Forms.Label();
             this.personFullNameLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.universityNameLabel = new System.Windows.Forms.Label();
             this.universityLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.nextDayButton = new System.Windows.Forms.Button();
             this.quitButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.spdlb = new System.Windows.Forms.Label();
+            this.pwrlbl = new System.Windows.Forms.Label();
+            this.stamlbl = new System.Windows.Forms.Label();
+            this.personSpeedLabel = new System.Windows.Forms.Label();
+            this.personPowerLabel = new System.Windows.Forms.Label();
+            this.personStaminaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,9 +78,11 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universityLogoPictureBox)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -217,6 +226,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.tableLayoutPanel2);
             this.groupBox3.Location = new System.Drawing.Point(337, 49);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(232, 498);
@@ -236,6 +246,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -267,70 +278,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(247, 331);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // personHeightLabel
+            // personNationalityLabel
             // 
-            this.personHeightLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.personNationalityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.personHeightLabel.AutoSize = true;
-            this.personHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personHeightLabel.Location = new System.Drawing.Point(126, 188);
-            this.personHeightLabel.Name = "personHeightLabel";
-            this.personHeightLabel.Size = new System.Drawing.Size(50, 47);
-            this.personHeightLabel.TabIndex = 6;
-            this.personHeightLabel.Text = "Height:";
-            this.personHeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // personGenderLabel
-            // 
-            this.personGenderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.personGenderLabel.AutoSize = true;
-            this.personGenderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personGenderLabel.Location = new System.Drawing.Point(126, 94);
-            this.personGenderLabel.Name = "personGenderLabel";
-            this.personGenderLabel.Size = new System.Drawing.Size(56, 47);
-            this.personGenderLabel.TabIndex = 5;
-            this.personGenderLabel.Text = "Gender:";
-            this.personGenderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // personDobLabel
-            // 
-            this.personDobLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.personDobLabel.AutoSize = true;
-            this.personDobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personDobLabel.Location = new System.Drawing.Point(126, 235);
-            this.personDobLabel.Name = "personDobLabel";
-            this.personDobLabel.Size = new System.Drawing.Size(83, 47);
-            this.personDobLabel.TabIndex = 4;
-            this.personDobLabel.Text = "Date of Birth:";
-            this.personDobLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // personAgeLabel
-            // 
-            this.personAgeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.personAgeLabel.AutoSize = true;
-            this.personAgeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personAgeLabel.Location = new System.Drawing.Point(126, 0);
-            this.personAgeLabel.Name = "personAgeLabel";
-            this.personAgeLabel.Size = new System.Drawing.Size(36, 47);
-            this.personAgeLabel.TabIndex = 3;
-            this.personAgeLabel.Text = "Age:";
-            this.personAgeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // personDateJoinedLabel
-            // 
-            this.personDateJoinedLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.personDateJoinedLabel.AutoSize = true;
-            this.personDateJoinedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personDateJoinedLabel.Location = new System.Drawing.Point(126, 282);
-            this.personDateJoinedLabel.Name = "personDateJoinedLabel";
-            this.personDateJoinedLabel.Size = new System.Drawing.Size(78, 49);
-            this.personDateJoinedLabel.TabIndex = 1;
-            this.personDateJoinedLabel.Text = "DateJoined";
-            this.personDateJoinedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.personNationalityLabel.AutoSize = true;
+            this.personNationalityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personNationalityLabel.Location = new System.Drawing.Point(127, 142);
+            this.personNationalityLabel.Name = "personNationalityLabel";
+            this.personNationalityLabel.Size = new System.Drawing.Size(74, 46);
+            this.personNationalityLabel.TabIndex = 2;
+            this.personNationalityLabel.Text = "Nationality:";
+            this.personNationalityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // personGradeaLabel
             // 
@@ -338,25 +297,38 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.personGradeaLabel.AutoSize = true;
             this.personGradeaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personGradeaLabel.Location = new System.Drawing.Point(126, 47);
+            this.personGradeaLabel.Location = new System.Drawing.Point(127, 48);
             this.personGradeaLabel.Name = "personGradeaLabel";
-            this.personGradeaLabel.Size = new System.Drawing.Size(46, 47);
+            this.personGradeaLabel.Size = new System.Drawing.Size(46, 46);
             this.personGradeaLabel.TabIndex = 0;
             this.personGradeaLabel.Text = "Grade";
             this.personGradeaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // personNationalityLabel
+            // label7
             // 
-            this.personNationalityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(34, 142);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 46);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Nationality:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // personDateJoinedLabel
+            // 
+            this.personDateJoinedLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.personNationalityLabel.AutoSize = true;
-            this.personNationalityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personNationalityLabel.Location = new System.Drawing.Point(126, 141);
-            this.personNationalityLabel.Name = "personNationalityLabel";
-            this.personNationalityLabel.Size = new System.Drawing.Size(74, 47);
-            this.personNationalityLabel.TabIndex = 2;
-            this.personNationalityLabel.Text = "Nationality:";
-            this.personNationalityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.personDateJoinedLabel.AutoSize = true;
+            this.personDateJoinedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personDateJoinedLabel.Location = new System.Drawing.Point(127, 283);
+            this.personDateJoinedLabel.Name = "personDateJoinedLabel";
+            this.personDateJoinedLabel.Size = new System.Drawing.Size(78, 47);
+            this.personDateJoinedLabel.TabIndex = 1;
+            this.personDateJoinedLabel.Text = "DateJoined";
+            this.personDateJoinedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label12
             // 
@@ -364,9 +336,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(62, 47);
+            this.label12.Location = new System.Drawing.Point(62, 48);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 47);
+            this.label12.Size = new System.Drawing.Size(58, 46);
             this.label12.TabIndex = 13;
             this.label12.Text = "Grade:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -377,38 +349,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(24, 282);
+            this.label11.Location = new System.Drawing.Point(24, 283);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(96, 49);
+            this.label11.Size = new System.Drawing.Size(96, 47);
             this.label11.TabIndex = 12;
             this.label11.Text = "Joined Club:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(34, 141);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 47);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Nationality:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(78, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 47);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Age:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
             // 
@@ -416,25 +362,38 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 235);
+            this.label5.Location = new System.Drawing.Point(17, 236);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 47);
+            this.label5.Size = new System.Drawing.Size(103, 46);
             this.label5.TabIndex = 9;
             this.label5.Text = "Date of Birth:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label4
+            // personDobLabel
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(53, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 47);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Gender:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.personDobLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.personDobLabel.AutoSize = true;
+            this.personDobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personDobLabel.Location = new System.Drawing.Point(127, 236);
+            this.personDobLabel.Name = "personDobLabel";
+            this.personDobLabel.Size = new System.Drawing.Size(83, 46);
+            this.personDobLabel.TabIndex = 4;
+            this.personDobLabel.Text = "Date of Birth:";
+            this.personDobLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // personHeightLabel
+            // 
+            this.personHeightLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.personHeightLabel.AutoSize = true;
+            this.personHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personHeightLabel.Location = new System.Drawing.Point(127, 189);
+            this.personHeightLabel.Name = "personHeightLabel";
+            this.personHeightLabel.Size = new System.Drawing.Size(50, 46);
+            this.personHeightLabel.TabIndex = 6;
+            this.personHeightLabel.Text = "Height:";
+            this.personHeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -442,12 +401,64 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 188);
+            this.label1.Location = new System.Drawing.Point(60, 189);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 47);
+            this.label1.Size = new System.Drawing.Size(60, 46);
             this.label1.TabIndex = 7;
             this.label1.Text = "Height:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(78, 1);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 46);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Age:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // personAgeLabel
+            // 
+            this.personAgeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.personAgeLabel.AutoSize = true;
+            this.personAgeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personAgeLabel.Location = new System.Drawing.Point(127, 1);
+            this.personAgeLabel.Name = "personAgeLabel";
+            this.personAgeLabel.Size = new System.Drawing.Size(36, 46);
+            this.personAgeLabel.TabIndex = 3;
+            this.personAgeLabel.Text = "Age:";
+            this.personAgeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(53, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 46);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Gender:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // personGenderLabel
+            // 
+            this.personGenderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.personGenderLabel.AutoSize = true;
+            this.personGenderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personGenderLabel.Location = new System.Drawing.Point(127, 95);
+            this.personGenderLabel.Name = "personGenderLabel";
+            this.personGenderLabel.Size = new System.Drawing.Size(56, 46);
+            this.personGenderLabel.TabIndex = 5;
+            this.personGenderLabel.Text = "Gender:";
+            this.personGenderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // personFullNameLabel
             // 
@@ -511,6 +522,110 @@
             this.quitButton.UseVisualStyleBackColor = true;
             this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.personStaminaLabel, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.personPowerLabel, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.personSpeedLabel, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.spdlb, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pwrlbl, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.stamlbl, 0, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(220, 473);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // spdlb
+            // 
+            this.spdlb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.spdlb.AutoSize = true;
+            this.spdlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spdlb.Location = new System.Drawing.Point(46, 1);
+            this.spdlb.Name = "spdlb";
+            this.spdlb.Size = new System.Drawing.Size(60, 58);
+            this.spdlb.TabIndex = 14;
+            this.spdlb.Text = "Speed:";
+            this.spdlb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pwrlbl
+            // 
+            this.pwrlbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pwrlbl.AutoSize = true;
+            this.pwrlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwrlbl.Location = new System.Drawing.Point(49, 60);
+            this.pwrlbl.Name = "pwrlbl";
+            this.pwrlbl.Size = new System.Drawing.Size(57, 58);
+            this.pwrlbl.TabIndex = 15;
+            this.pwrlbl.Text = "Power:";
+            this.pwrlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // stamlbl
+            // 
+            this.stamlbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.stamlbl.AutoSize = true;
+            this.stamlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stamlbl.Location = new System.Drawing.Point(34, 119);
+            this.stamlbl.Name = "stamlbl";
+            this.stamlbl.Size = new System.Drawing.Size(72, 58);
+            this.stamlbl.TabIndex = 16;
+            this.stamlbl.Text = "Stamina:";
+            this.stamlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // personSpeedLabel
+            // 
+            this.personSpeedLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.personSpeedLabel.AutoSize = true;
+            this.personSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personSpeedLabel.Location = new System.Drawing.Point(113, 1);
+            this.personSpeedLabel.Name = "personSpeedLabel";
+            this.personSpeedLabel.Size = new System.Drawing.Size(47, 58);
+            this.personSpeedLabel.TabIndex = 17;
+            this.personSpeedLabel.Text = "speed";
+            this.personSpeedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // personPowerLabel
+            // 
+            this.personPowerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.personPowerLabel.AutoSize = true;
+            this.personPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personPowerLabel.Location = new System.Drawing.Point(113, 60);
+            this.personPowerLabel.Name = "personPowerLabel";
+            this.personPowerLabel.Size = new System.Drawing.Size(45, 58);
+            this.personPowerLabel.TabIndex = 18;
+            this.personPowerLabel.Text = "power";
+            this.personPowerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // personStaminaLabel
+            // 
+            this.personStaminaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.personStaminaLabel.AutoSize = true;
+            this.personStaminaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personStaminaLabel.Location = new System.Drawing.Point(113, 119);
+            this.personStaminaLabel.Name = "personStaminaLabel";
+            this.personStaminaLabel.Size = new System.Drawing.Size(55, 58);
+            this.personStaminaLabel.TabIndex = 19;
+            this.personStaminaLabel.Text = "stamina";
+            this.personStaminaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,10 +646,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universityLogoPictureBox)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -575,5 +693,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button selectPlayerUniversityButton;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label spdlb;
+        private System.Windows.Forms.Label pwrlbl;
+        private System.Windows.Forms.Label stamlbl;
+        private System.Windows.Forms.Label personStaminaLabel;
+        private System.Windows.Forms.Label personPowerLabel;
+        private System.Windows.Forms.Label personSpeedLabel;
     }
 }

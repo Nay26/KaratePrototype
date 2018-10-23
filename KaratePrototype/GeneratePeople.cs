@@ -77,6 +77,7 @@ namespace KaratePrototype
                 imageLayerList = grabber.SelectRandomImageFromDirectories(rnd);
                 Bitmap faceImage = combiner.MergeImageLayers(imageLayerList);
                 combiner.SaveImage(faceImage, personid);
+                faceImage.Dispose();
             }      
 
         }
@@ -95,5 +96,17 @@ namespace KaratePrototype
             databaseOperations.LoadKaratekas();
         }
 
+        public void GeneratePrimaryStatBlockList()
+        {
+            Random rnd = new Random();
+            foreach (var person in databaseOperations.People)
+            {
+                PrimaryStatBlock primaryStatBlock = new PrimaryStatBlock(rnd);
+                primaryStatBlock.PersonID = person.ID;
+                databaseOperations.PrimaryStatBlocks.Add(primaryStatBlock);
+            }
+            databaseOperations.InsertPrimaryStatBlocks();
+            databaseOperations.LoadPrimaryStatBlocks();
+        }
     }
 }

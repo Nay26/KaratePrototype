@@ -13,6 +13,7 @@ namespace KaratePrototype
         public List<University> Universities = new List<University>();
         public List<Person> People = new List<Person>();
         public List<Karateka> Karatekas = new List<Karateka>();
+        public List<PrimaryStatBlock> PrimaryStatBlocks = new List<PrimaryStatBlock>();
 
         public DatabaseOperations()
         {
@@ -26,6 +27,7 @@ namespace KaratePrototype
             LoadUniversities();
             LoadPeople();
             LoadKaratekas();
+            LoadPrimaryStatBlocks();
         }
 
         public void LoadPeople()
@@ -113,6 +115,32 @@ namespace KaratePrototype
                             break;
                     }
                     Karatekas.Add(karateka);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            conn.Close();
+        }
+
+        public void LoadPrimaryStatBlocks()
+        {
+            PrimaryStatBlocks.Clear();
+            string query = "SELECT * FROM PrimaryStats";
+            conn.Open();
+            try
+            {
+                myCommand = new SqlCommand(query, conn);
+                SqlDataReader reader = myCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    PrimaryStatBlock primaryStatBlock = new PrimaryStatBlock();
+                    primaryStatBlock.PersonID = reader.GetInt32(0);
+                    primaryStatBlock.Speed.Experiance = reader.GetDouble(1);
+                    primaryStatBlock.Power.Experiance = reader.GetDouble(2);
+                    primaryStatBlock.Stamina.Experiance = reader.GetDouble(3);
+                    PrimaryStatBlocks.Add(primaryStatBlock);
                 }
             }
             catch (Exception e)
@@ -234,6 +262,30 @@ namespace KaratePrototype
                     myCommand.Parameters.AddWithValue("@uniid", karateka.UniversityID);
                     myCommand.Parameters.AddWithValue("@grade", karateka.Grade.GradeName);
                     myCommand.Parameters.AddWithValue("@startdate", karateka.StartDate);
+                    myCommand.ExecuteNonQuery();
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+            }
+            conn.Close();
+        }
+
+        public void InsertPrimaryStatBlocks()
+        {
+            conn.Open();
+            foreach (var primaryStatBlock in PrimaryStatBlocks)
+            {
+                try
+                {
+                    string query = "INSERT INTO PrimaryStats (PersonID, Speed,Power,Stamina) VALUES (@personid, @speed, @power, @stamina);";
+                    myCommand = new SqlCommand(query, conn);
+                    myCommand.Parameters.AddWithValue("@personid", primaryStatBlock.PersonID);
+                    myCommand.Parameters.AddWithValue("@speed", primaryStatBlock.Speed.Experiance);
+                    myCommand.Parameters.AddWithValue("@power", primaryStatBlock.Power.Experiance);
+                    myCommand.Parameters.AddWithValue("@stamina", primaryStatBlock.Stamina.Experiance);
                     myCommand.ExecuteNonQuery();
 
                 }

@@ -49,6 +49,7 @@ namespace KaratePrototype
                     Console.WriteLine("Error, invalid extension supplied.");
                     break;
             }
+            output.Dispose();
         }
 
         public Bitmap MergeImageLayers(List<Image> layers)

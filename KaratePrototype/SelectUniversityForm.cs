@@ -20,6 +20,19 @@ namespace KaratePrototype
             databaseOperations.InsertUniversityXmlData();
             databaseOperations.LoadUniversities();
             PopulateUniversityListbox();
+
+            List<Statistic> statList = new List<Statistic>();
+            for (int i = 0; i < 100; i++)
+            {
+                Statistic stat = new Statistic();
+                stat.Level = i;
+                stat.CalculateXP();
+                statList.Add(stat);
+            }
+            for (int i = 0; i < 100; i++)
+            {
+                Console.WriteLine(statList[i].Level + " : " + statList[i].Experiance);
+            }
         }
 
         private void PopulateUniversityListbox()
@@ -64,13 +77,15 @@ namespace KaratePrototype
             SelectPlayerUniversity();
             GeneratePeople generatePeople = new GeneratePeople(databaseOperations);
             generatePeople.PopulateUniversities();
-            foreach (var uni in databaseOperations.Universities)
-            {
-                Console.WriteLine("Generating Faces for " +  uni.Name);
-                generatePeople.GenerateFaces(uni.ID);
-            }
+            //foreach (var uni in databaseOperations.Universities)
+            //{
+            //    Console.WriteLine("Generating Faces for " +  uni.Name);
+            //    generatePeople.GenerateFaces(uni.ID);
+            //}
+            generatePeople.GenerateFaces(UniversityID);
             Console.WriteLine("Finished Generating Faces");
             generatePeople.GenerateKaratekaList();
+            generatePeople.GeneratePrimaryStatBlockList();
             GoToMainScreen();
 
         }

@@ -11,6 +11,7 @@ namespace KaratePrototype
         List<Person> currentlySelectedUniversityPeople = new List<Person>();
         Person SelectedPerson = new Person();
         Karateka SelectedKarateka = new Karateka();
+        PrimaryStatBlock SelectedPrimaryStatBlock = new PrimaryStatBlock();
         DateTime currentDate = DateTime.Today;
 
         public MainScreen()
@@ -124,8 +125,17 @@ namespace KaratePrototype
                 }
             }
 
+            foreach (var primaryStatBlock in databaseOperations.PrimaryStatBlocks)
+            {
+                if (SelectedPerson.ID == primaryStatBlock.PersonID)
+                {
+                    SelectedPrimaryStatBlock = primaryStatBlock;
+                    break;
+                }
+            }
 
-            personFullNameLabel.Text = SelectedPerson.FirstName + " " + SelectedPerson.SecondName;
+
+                personFullNameLabel.Text = SelectedPerson.FirstName + " " + SelectedPerson.SecondName;
             
 
             personNationalityLabel.Text = SelectedPerson.Nationality;
@@ -136,8 +146,13 @@ namespace KaratePrototype
             if (SelectedPerson.DateOfBirth > today.AddYears(-age)) age--;
             personAgeLabel.Text = age.ToString();
             personGenderLabel.Text = SelectedPerson.Gender.LongGender;
+
             personDateJoinedLabel.Text = SelectedKarateka.StartDate.ToString("dd/MM/yyyy");
             personGradeaLabel.Text = SelectedKarateka.Grade.GradeName;
+
+            personSpeedLabel.Text = SelectedPrimaryStatBlock.Speed.Level.ToString();
+            personPowerLabel.Text = SelectedPrimaryStatBlock.Power.Level.ToString();
+            personStaminaLabel.Text = SelectedPrimaryStatBlock.Stamina.Level.ToString();
 
             personPictureBox.ImageLocation = (@".\Creation\CreatedImages\" + SelectedPerson.ID + ".png");
             personPictureBox.SizeMode = PictureBoxSizeMode.Zoom;

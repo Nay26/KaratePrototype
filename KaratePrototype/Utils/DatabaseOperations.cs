@@ -130,7 +130,7 @@ namespace KaratePrototype
             conn.Close();
         }
 
-        // Selects all universities from the Universiites table and stores the data into the global people list.
+        // Selects all universities from the Universites table and stores the data into the global people list.
         public void LoadUniversities()
         {
             Universities.Clear();
@@ -235,7 +235,40 @@ namespace KaratePrototype
               
             }
             conn.Close();
-        }       
+        }
+
+        public void UpdatePeople()
+        {
+            conn.Open();
+            foreach (var person in People)
+            {
+                try
+                {
+                    string query = "UPDATE People SET UniversityID = @uniid, FirstName = @firstname, SecondName=@secondname, Nationality=@nationality, Height=@height, DateOfBirth=@dateofbirth, Gender=@gender, Grade=@grade, StartDate=@startdate,Speed=@speed,Power=@power,Stamina=@stamina WHERE PersonID = @personid;";
+                    myCommand = new SqlCommand(query, conn);
+                    myCommand.Parameters.AddWithValue("@personid", person.ID);
+                    myCommand.Parameters.AddWithValue("@uniid", person.UniversityID);
+                    myCommand.Parameters.AddWithValue("@firstname", person.FirstName);
+                    myCommand.Parameters.AddWithValue("@secondname", person.SecondName);
+                    myCommand.Parameters.AddWithValue("@nationality", person.Nationality);
+                    myCommand.Parameters.AddWithValue("@height", person.Height);
+                    myCommand.Parameters.AddWithValue("@dateofbirth", person.DateOfBirth);
+                    myCommand.Parameters.AddWithValue("@gender", person.Gender.LongGender);
+                    myCommand.Parameters.AddWithValue("@grade", person.Grade.GradeName);
+                    myCommand.Parameters.AddWithValue("@startdate", person.StartDate);
+                    myCommand.Parameters.AddWithValue("@speed", person.Speed.Experiance);
+                    myCommand.Parameters.AddWithValue("@power", person.Power.Experiance);
+                    myCommand.Parameters.AddWithValue("@stamina", person.Stamina.Experiance);
+                    myCommand.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+
+            }
+            conn.Close();
+        }
 
     }
 

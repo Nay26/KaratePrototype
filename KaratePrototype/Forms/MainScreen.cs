@@ -12,18 +12,21 @@ namespace KaratePrototype
         Person SelectedPerson = new Person();
         DateTime currentDate = DateTime.Today;
 
+
+        //+++++++++++++++ INITIALISATION +++++++++++++++++++++++++
+
         // Initalise the main screen form.
         public MainScreen()
         {
             InitializeComponent();
             databaseOperations.LoadDatabaseData();
             RetrivePlayerUniversityInfo();
-            PopulateFormItems();      
+            PopulateFormItems();
         }
 
         // Load the relevant information to all ui elements on the form.
         public void PopulateFormItems()
-        {            
+        {
             PopulateUniversityComboBox();
             LoadUniversityImage();
             LoadUniversityName();
@@ -79,11 +82,45 @@ namespace KaratePrototype
         {
             universityLogoPictureBox.ImageLocation = (@".\UniversityLogos\" + PlayerUniversity.Logo + ".png");
             universityLogoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-        }        
-       
-        // When a university is selected fro the combo box, add all people from that university to the people listbox.
+        }
+
+
+
+        //+++++++++++++++++ USER CONTROLS ++++++++++++++++++++++++
+
+        // When a university is selected from the combo box, add all people from that university to the people listbox.
         private void universityComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {         
+        {
+            UpdateSelectedPeopleList();
+        }
+
+        // When person is selected from listbox, load that persons information into the form.
+        private void peopleListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdatePersonInfo();
+        }
+
+        // When the players university button is clicked, select that university from the combobox.
+        private void selectPlayerUniversityButton_Click(object sender, EventArgs e)
+        {
+            universityComboBox.SelectedItem = PlayerUniversity.Name;
+        }
+
+        // Runs the cleanup process and quits the application.
+        private void quitButton_Click(object sender, EventArgs e)
+        {
+
+            Cleanup.CleanFilesAndDB();
+            Application.Exit();
+        }
+
+
+
+        //+++++++++++++++++++++ UPDATING DATA +++++++++++++++++++++++
+
+        // Add all people from selected university to the people listbox, update selected people list
+        private void UpdateSelectedPeopleList()
+        {
             int universityID = 0;
             foreach (var uni in databaseOperations.Universities)
             {
@@ -106,8 +143,8 @@ namespace KaratePrototype
             peopleListBox.DataSource = peopleNameList;
         }
 
-        // When person is selected from listbox, load that persons information into the form.
-        private void peopleListBox_SelectedIndexChanged(object sender, EventArgs e)
+        // Load the currently selected persons information into the form.
+        private void UpdatePersonInfo()
         {
             int listIndex = peopleListBox.SelectedIndex;
             SelectedPerson = currentlySelectedUniversityPeople[listIndex];
@@ -130,28 +167,40 @@ namespace KaratePrototype
 
             personSpeedLabel.Text = SelectedPerson.Speed.Level.ToString();
             personPowerLabel.Text = SelectedPerson.Power.Level.ToString();
-            personStaminaLabel.Text = SelectedPerson.Stamina.Level.ToString();      
+            personStaminaLabel.Text = SelectedPerson.Stamina.Level.ToString();
         }
-       
-        // When the players university button is clicked, select that university from the combobox.
-        private void selectPlayerUniversityButton_Click(object sender, EventArgs e)
-        {
-            universityComboBox.SelectedItem = PlayerUniversity.Name;
-        }
+      
+
+
+        //++++++++++++++++ GOING TO NEXT DAY +++++++++++++++++++++++
 
         // When the next day button is clicked, change the current date to that date.
         private void nextDayButton_Click(object sender, EventArgs e)
         {
+            SimulateDay();
             currentDate = currentDate.AddDays(1);
             SetDate();
         }
 
-        // Runs the cleanup process and quits the application.
-        private void quitButton_Click(object sender, EventArgs e)
+        // Day simulation
+        private void SimulateDay()
         {
-
-            Cleanup.CleanFilesAndDB();
-            Application.Exit();
+            foreach (var person in databaseOperations.People)
+            {
+                SimulateTraining(person);
+            }
+            databaseOperations.UpdatePeople();
+            UpdateSelectedPeopleList();
+            UpdatePersonInfo();
         }
+
+        // Training simulation
+        private void SimulateTraining(Person person)
+        {
+            person.Speed.AddXP(100);
+            person.Power.AddXP(100);
+            person.Stamina.AddXP(100);
+        }
+    
     }
 }

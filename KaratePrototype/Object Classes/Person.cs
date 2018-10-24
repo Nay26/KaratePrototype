@@ -120,14 +120,17 @@ namespace KaratePrototype
       
         public void GenerateHeight(Random rnd)
         {
+            double difference = rnd.NextDouble();
+            difference = (difference * 20) - 10;         
             if (Gender.LongGender.Equals("Male"))
             {
-                Height = 177.8;
+                Height = 177.8 + difference;
             }
             else
             {
-                Height = 164.4;
+                Height = 164.4 + difference;
             }
+            Height =  Math.Round(Height,1);
 
         }
 

@@ -19,14 +19,6 @@ namespace KaratePrototype
             myCommand = new SqlCommand(query, conn);
             myCommand.ExecuteNonQuery();
 
-            query = "DELETE FROM Karatekas";
-            myCommand = new SqlCommand(query, conn);
-            myCommand.ExecuteNonQuery();
-            
-            query = "DELETE FROM PrimaryStats";
-            myCommand = new SqlCommand(query, conn);
-            myCommand.ExecuteNonQuery();
-
             conn.Close();
 
             System.IO.DirectoryInfo di = new DirectoryInfo(@".\Creation\CreatedImages");

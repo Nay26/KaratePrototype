@@ -61,42 +61,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cleanup.cs" />
-    <Compile Include="DatabaseOperations.cs" />
-    <Compile Include="GeneratePeople.cs" />
-    <Compile Include="Grade.cs" />
-    <Compile Include="IGrade.cs" />
-    <Compile Include="ImageCombiner.cs" />
+    <Compile Include="Utils\Cleanup.cs" />
+    <Compile Include="Utils\DatabaseOperations.cs" />
+    <Compile Include="Utils\GeneratePeople.cs" />
+    <Compile Include="Object Classes\Grade.cs" />
+    <Compile Include="Interfaces\IGrade.cs" />
+    <Compile Include="Utils\ImageCombiner.cs" />
     <Compile Include="KaratePrototypeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>KaratePrototypeDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="MainScreen.cs">
+    <Compile Include="Forms\MainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainScreen.Designer.cs">
+    <Compile Include="Forms\MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="RandomFileGrabber.cs" />
-    <Compile Include="SelectUniversityForm.cs">
+    <Compile Include="Utils\RandomFileGrabber.cs" />
+    <Compile Include="Forms\SelectUniversityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectUniversityForm.Designer.cs">
+    <Compile Include="Forms\SelectUniversityForm.Designer.cs">
       <DependentUpon>SelectUniversityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gender.cs" />
-    <Compile Include="IGender.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="Object Classes\Gender.cs" />
+    <Compile Include="Interfaces\IGender.cs" />
+    <Compile Include="Object Classes\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Statistic.cs" />
-    <Compile Include="University.cs" />
-    <EmbeddedResource Include="MainScreen.resx">
+    <Compile Include="Object Classes\Statistic.cs" />
+    <Compile Include="Object Classes\University.cs" />
+    <EmbeddedResource Include="Forms\MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectUniversityForm.resx">
+    <EmbeddedResource Include="Forms\SelectUniversityForm.resx">
       <DependentUpon>SelectUniversityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

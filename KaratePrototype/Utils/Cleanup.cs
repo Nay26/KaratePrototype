@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KaratePrototype
 {
-   public class Cleanup
+    public class Cleanup
     {
         public static void CleanFilesAndDB()
         {

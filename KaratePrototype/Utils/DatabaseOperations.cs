@@ -7,7 +7,7 @@ namespace KaratePrototype
 {
     class DatabaseOperations
     {
-        // The lists declared here are global representations of the database data.
+        // The lists declared here are global representations of the database data..
         public static string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
         public SqlCommand myCommand;
         public SqlConnection conn;

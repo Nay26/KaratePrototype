@@ -31,8 +31,7 @@ namespace KaratePrototype
         }
 
         public Person(Random rnd) : this()
-        {
-          
+        {          
             GenerateGender(rnd);
             GenerateName(rnd);
             GenerateNationality(rnd);
@@ -204,6 +203,17 @@ namespace KaratePrototype
             Speed.Level = rnd.Next(average - difference, average + difference);
             Power.Level = rnd.Next(average - difference, average + difference);
             Stamina.Level = rnd.Next(average - difference, average + difference);
+        }
+
+        public int GetOverallRating()
+        {
+            int rating = 0;
+            double sum = 0;
+            sum = Power.Level + Speed.Level + Stamina.Level;
+            sum = sum / 3;
+            sum = Math.Round(sum,0);
+            rating = Convert.ToInt32(sum);
+            return rating;
         }
     }
 }

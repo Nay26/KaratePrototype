@@ -152,6 +152,7 @@ namespace KaratePrototype
             personFullNameLabel.Text = SelectedPerson.FirstName + " " + SelectedPerson.SecondName;
             personPictureBox.ImageLocation = (@".\Creation\CreatedImages\" + SelectedPerson.ID + ".png");
             personPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            personOverallRatingLabel.Text = SelectedPerson.GetOverallRating().ToString();
 
             personNationalityLabel.Text = SelectedPerson.Nationality;
             personHeightLabel.Text = SelectedPerson.Height.ToString();
@@ -169,7 +170,7 @@ namespace KaratePrototype
             personPowerLabel.Text = SelectedPerson.Power.Level.ToString();
             personStaminaLabel.Text = SelectedPerson.Stamina.Level.ToString();
         }
-      
+
 
 
         //++++++++++++++++ GOING TO NEXT DAY +++++++++++++++++++++++
@@ -185,9 +186,10 @@ namespace KaratePrototype
         // Day simulation
         private void SimulateDay()
         {
+            Random rnd = new Random();
             foreach (var person in databaseOperations.People)
             {
-                SimulateTraining(person);
+                SimulateTraining(person, rnd);
             }
             databaseOperations.UpdatePeople();
             UpdateSelectedPeopleList();
@@ -195,11 +197,13 @@ namespace KaratePrototype
         }
 
         // Training simulation
-        private void SimulateTraining(Person person)
+        private void SimulateTraining(Person person, Random rnd)
         {
-            person.Speed.AddXP(100);
-            person.Power.AddXP(100);
-            person.Stamina.AddXP(100);
+            int increment = 0;
+            increment = rnd.Next(-50,50);
+            person.Speed.AddXP(100+increment);
+            person.Power.AddXP(100+increment);
+            person.Stamina.AddXP(100+increment);
         }
     
     }

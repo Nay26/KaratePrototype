@@ -237,6 +237,7 @@ namespace KaratePrototype
             conn.Close();
         }
 
+        // Takes the global People list and Updates the People table in the database.
         public void UpdatePeople()
         {
             conn.Open();

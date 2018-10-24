@@ -36,10 +36,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.peopleListBox = new System.Windows.Forms.ListBox();
             this.personPictureBox = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.personOverallRatingLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.personStaminaLabel = new System.Windows.Forms.Label();
+            this.personPowerLabel = new System.Windows.Forms.Label();
+            this.personSpeedLabel = new System.Windows.Forms.Label();
+            this.spdlb = new System.Windows.Forms.Label();
+            this.pwrlbl = new System.Windows.Forms.Label();
+            this.stamlbl = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.personNationalityLabel = new System.Windows.Forms.Label();
@@ -62,13 +69,6 @@
             this.universityLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.nextDayButton = new System.Windows.Forms.Button();
             this.quitButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.spdlb = new System.Windows.Forms.Label();
-            this.pwrlbl = new System.Windows.Forms.Label();
-            this.stamlbl = new System.Windows.Forms.Label();
-            this.personSpeedLabel = new System.Windows.Forms.Label();
-            this.personPowerLabel = new System.Windows.Forms.Label();
-            this.personStaminaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,10 +79,10 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universityLogoPictureBox)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -127,7 +127,7 @@
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer2.Panel2.Controls.Add(this.personPictureBox);
-            this.splitContainer2.Panel2.Controls.Add(this.label9);
+            this.splitContainer2.Panel2.Controls.Add(this.personOverallRatingLabel);
             this.splitContainer2.Panel2.Controls.Add(this.label8);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
@@ -195,15 +195,15 @@
             this.personPictureBox.TabIndex = 10;
             this.personPictureBox.TabStop = false;
             // 
-            // label9
+            // personOverallRatingLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(192, 80);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 64);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "99";
+            this.personOverallRatingLabel.AutoSize = true;
+            this.personOverallRatingLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personOverallRatingLabel.Location = new System.Drawing.Point(192, 80);
+            this.personOverallRatingLabel.Name = "personOverallRatingLabel";
+            this.personOverallRatingLabel.Size = new System.Drawing.Size(88, 64);
+            this.personOverallRatingLabel.TabIndex = 5;
+            this.personOverallRatingLabel.Text = "99";
             // 
             // label8
             // 
@@ -233,6 +233,110 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Stats";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.personStaminaLabel, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.personPowerLabel, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.personSpeedLabel, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.spdlb, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pwrlbl, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.stamlbl, 0, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(220, 473);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // personStaminaLabel
+            // 
+            this.personStaminaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.personStaminaLabel.AutoSize = true;
+            this.personStaminaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personStaminaLabel.Location = new System.Drawing.Point(113, 119);
+            this.personStaminaLabel.Name = "personStaminaLabel";
+            this.personStaminaLabel.Size = new System.Drawing.Size(55, 58);
+            this.personStaminaLabel.TabIndex = 19;
+            this.personStaminaLabel.Text = "stamina";
+            this.personStaminaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // personPowerLabel
+            // 
+            this.personPowerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.personPowerLabel.AutoSize = true;
+            this.personPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personPowerLabel.Location = new System.Drawing.Point(113, 60);
+            this.personPowerLabel.Name = "personPowerLabel";
+            this.personPowerLabel.Size = new System.Drawing.Size(45, 58);
+            this.personPowerLabel.TabIndex = 18;
+            this.personPowerLabel.Text = "power";
+            this.personPowerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // personSpeedLabel
+            // 
+            this.personSpeedLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.personSpeedLabel.AutoSize = true;
+            this.personSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personSpeedLabel.Location = new System.Drawing.Point(113, 1);
+            this.personSpeedLabel.Name = "personSpeedLabel";
+            this.personSpeedLabel.Size = new System.Drawing.Size(47, 58);
+            this.personSpeedLabel.TabIndex = 17;
+            this.personSpeedLabel.Text = "speed";
+            this.personSpeedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // spdlb
+            // 
+            this.spdlb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.spdlb.AutoSize = true;
+            this.spdlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spdlb.Location = new System.Drawing.Point(46, 1);
+            this.spdlb.Name = "spdlb";
+            this.spdlb.Size = new System.Drawing.Size(60, 58);
+            this.spdlb.TabIndex = 14;
+            this.spdlb.Text = "Speed:";
+            this.spdlb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pwrlbl
+            // 
+            this.pwrlbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pwrlbl.AutoSize = true;
+            this.pwrlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwrlbl.Location = new System.Drawing.Point(49, 60);
+            this.pwrlbl.Name = "pwrlbl";
+            this.pwrlbl.Size = new System.Drawing.Size(57, 58);
+            this.pwrlbl.TabIndex = 15;
+            this.pwrlbl.Text = "Power:";
+            this.pwrlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // stamlbl
+            // 
+            this.stamlbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.stamlbl.AutoSize = true;
+            this.stamlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stamlbl.Location = new System.Drawing.Point(34, 119);
+            this.stamlbl.Name = "stamlbl";
+            this.stamlbl.Size = new System.Drawing.Size(72, 58);
+            this.stamlbl.TabIndex = 16;
+            this.stamlbl.Text = "Stamina:";
+            this.stamlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox2
             // 
@@ -522,110 +626,6 @@
             this.quitButton.UseVisualStyleBackColor = true;
             this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.personStaminaLabel, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.personPowerLabel, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.personSpeedLabel, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.spdlb, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.pwrlbl, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.stamlbl, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 19);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 8;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(220, 473);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // spdlb
-            // 
-            this.spdlb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.spdlb.AutoSize = true;
-            this.spdlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spdlb.Location = new System.Drawing.Point(46, 1);
-            this.spdlb.Name = "spdlb";
-            this.spdlb.Size = new System.Drawing.Size(60, 58);
-            this.spdlb.TabIndex = 14;
-            this.spdlb.Text = "Speed:";
-            this.spdlb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pwrlbl
-            // 
-            this.pwrlbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pwrlbl.AutoSize = true;
-            this.pwrlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pwrlbl.Location = new System.Drawing.Point(49, 60);
-            this.pwrlbl.Name = "pwrlbl";
-            this.pwrlbl.Size = new System.Drawing.Size(57, 58);
-            this.pwrlbl.TabIndex = 15;
-            this.pwrlbl.Text = "Power:";
-            this.pwrlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // stamlbl
-            // 
-            this.stamlbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.stamlbl.AutoSize = true;
-            this.stamlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stamlbl.Location = new System.Drawing.Point(34, 119);
-            this.stamlbl.Name = "stamlbl";
-            this.stamlbl.Size = new System.Drawing.Size(72, 58);
-            this.stamlbl.TabIndex = 16;
-            this.stamlbl.Text = "Stamina:";
-            this.stamlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // personSpeedLabel
-            // 
-            this.personSpeedLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.personSpeedLabel.AutoSize = true;
-            this.personSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personSpeedLabel.Location = new System.Drawing.Point(113, 1);
-            this.personSpeedLabel.Name = "personSpeedLabel";
-            this.personSpeedLabel.Size = new System.Drawing.Size(47, 58);
-            this.personSpeedLabel.TabIndex = 17;
-            this.personSpeedLabel.Text = "speed";
-            this.personSpeedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // personPowerLabel
-            // 
-            this.personPowerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.personPowerLabel.AutoSize = true;
-            this.personPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personPowerLabel.Location = new System.Drawing.Point(113, 60);
-            this.personPowerLabel.Name = "personPowerLabel";
-            this.personPowerLabel.Size = new System.Drawing.Size(45, 58);
-            this.personPowerLabel.TabIndex = 18;
-            this.personPowerLabel.Text = "power";
-            this.personPowerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // personStaminaLabel
-            // 
-            this.personStaminaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.personStaminaLabel.AutoSize = true;
-            this.personStaminaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personStaminaLabel.Location = new System.Drawing.Point(113, 119);
-            this.personStaminaLabel.Name = "personStaminaLabel";
-            this.personStaminaLabel.Size = new System.Drawing.Size(55, 58);
-            this.personStaminaLabel.TabIndex = 19;
-            this.personStaminaLabel.Text = "stamina";
-            this.personStaminaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -647,12 +647,12 @@
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universityLogoPictureBox)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -665,7 +665,7 @@
         private System.Windows.Forms.Button nextDayButton;
         private System.Windows.Forms.Button quitButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label personOverallRatingLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;

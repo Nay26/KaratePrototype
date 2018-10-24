@@ -133,31 +133,63 @@ namespace KaratePrototype
 
         private IGrade GetRandomGrade(Random rnd)
         {
-            IGrade grade = new WhiteBelt();
-            int roll = rnd.Next(0, 100);
-            if (roll < 25)
+            IGrade grade = new TenthKyu();
+            int roll = rnd.Next(0, 1000);
+            if (roll < 500)
             {
-                grade = new WhiteBelt();
+                grade = new TenthKyu();
             }
-            else if (roll < 30)
+            else if (roll < 550)
             {
-                grade = new OrangeBelt();
+                grade = new NinthKyu();
             }
-            else if (roll < 35)
+            else if (roll < 600)
             {
-                grade = new RedBelt();
+                grade = new EightKyu();
             }
-            else if (roll < 40)
+            else if (roll < 650)
             {
-                grade = new YellowBelt();
+                grade = new SeventhKyu();
             }
-            else if (roll < 45)
+            else if (roll < 700)
             {
-                grade = new GreenBelt();
+                grade = new SixthKyu();
             }
-            else
+            else if (roll < 750)
             {
-                grade = new WhiteBelt();
+                grade = new FifthKyu();
+            }
+            else if (roll < 800)
+            {
+                grade = new FourthKyu();
+            }
+            else if (roll < 825)
+            {
+                grade = new ThirdKyu();
+            }
+            else if (roll < 850)
+            {
+                grade = new SecondKyu();
+            }
+            else if (roll < 875)
+            {
+                grade = new FirstKyu();
+            }
+            else if (roll < 900)
+            {
+                grade = new FirstDan();
+            }
+            else if (roll < 980)
+            {
+                grade = new SecondDan();
+            }
+            else if (roll < 990)
+            {
+                grade = new ThirdDan();
+            }
+            else if (roll < 995)
+            {
+                grade = new FourthDan();
             }
             return grade;
         }

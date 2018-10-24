@@ -6,5 +6,6 @@
         string BeltColourRef { get; set; }
         string GradeName { get; set; }
         int AverageStat { get; set; }
+        string CompetitionCategory { get; set; }
     }
 }

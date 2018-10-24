@@ -70,23 +70,50 @@ namespace KaratePrototype
                     tempGrade = reader.GetString(8);
                     switch (tempGrade)
                     {
-                        case "10th kyu":
-                            person.Grade = new WhiteBelt();
+                        case "10th Kyu":
+                            person.Grade = new TenthKyu();
                             break;
-                        case "9th kyu":
-                            person.Grade = new OrangeBelt();
+                        case "9th Kyu":
+                            person.Grade = new NinthKyu();
                             break;
-                        case "8th kyu":
-                            person.Grade = new RedBelt();
+                        case "8th Kyu":
+                            person.Grade = new EightKyu();
                             break;
-                        case "7th kyu":
-                            person.Grade = new YellowBelt();
+                        case "7th Kyu":
+                            person.Grade = new SeventhKyu();
                             break;
-                        case "6th kyu":
-                            person.Grade = new GreenBelt();
+                        case "6th Kyu":
+                            person.Grade = new SixthKyu();
+                            break;
+                        case "5th Kyu":
+                            person.Grade = new FifthKyu();
+                            break;
+                        case "4th Kyu":
+                            person.Grade = new FourthKyu();
+                            break;
+                        case "3rd Kyu":
+                            person.Grade = new ThirdKyu();
+                            break;
+                        case "2nd Kyu":
+                            person.Grade = new SecondKyu();
+                            break;
+                        case "1st Kyu":
+                            person.Grade = new FirstKyu();
+                            break;
+                        case "1st Dan":
+                            person.Grade = new FirstDan();
+                            break;
+                        case "2nd Dan":
+                            person.Grade = new SecondDan();
+                            break;
+                        case "3rd Dan":
+                            person.Grade = new ThirdDan();
+                            break;
+                        case "4th Dan":
+                            person.Grade = new FourthDan();
                             break;
                         default:
-                            person.Grade = new WhiteBelt();
+                            person.Grade = new TenthKyu();
                             break;
                     }
                     person.StartDate = reader.GetDateTime(9);

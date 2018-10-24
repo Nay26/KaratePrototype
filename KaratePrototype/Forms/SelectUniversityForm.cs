@@ -68,7 +68,7 @@ namespace KaratePrototype
             GeneratePeople generatePeople = new GeneratePeople(databaseOperations);
             ImageCombiner combiner = new ImageCombiner();
             Random rnd = new Random();
-            //generatePeople.PopulateUniversities();
+            generatePeople.PopulateUniversities();
             //foreach (var uni in databaseOperations.Universities)
             //{
             //    Console.WriteLine("Generating Faces for " + uni.Name);

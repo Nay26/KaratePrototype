@@ -44,6 +44,7 @@
             TextFilePath = @".\FirstNamesGirls.txt";
         }
     }
+
     class NonBinary : IGender
     {
         public string LongGender { get; set; }

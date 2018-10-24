@@ -67,7 +67,6 @@
     <Compile Include="Grade.cs" />
     <Compile Include="IGrade.cs" />
     <Compile Include="ImageCombiner.cs" />
-    <Compile Include="Karateka.cs" />
     <Compile Include="KaratePrototypeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,7 +79,6 @@
     <Compile Include="MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrimaryStatBlock.cs" />
     <Compile Include="RandomFileGrabber.cs" />
     <Compile Include="SelectUniversityForm.cs">
       <SubType>Form</SubType>

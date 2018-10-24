@@ -11,7 +11,6 @@ namespace KaratePrototype
     {
 
         public int UniversityID;
-        public string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
         DatabaseOperations databaseOperations = new DatabaseOperations();
 
         public SelectUniversityForm()
@@ -84,8 +83,6 @@ namespace KaratePrototype
             //}
             generatePeople.GenerateFaces(UniversityID);
             Console.WriteLine("Finished Generating Faces");
-            generatePeople.GenerateKaratekaList();
-            generatePeople.GeneratePrimaryStatBlockList();
             GoToMainScreen();
 
         }

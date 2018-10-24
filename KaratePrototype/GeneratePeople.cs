@@ -83,40 +83,5 @@ namespace KaratePrototype
             imageLayerList.TrimExcess();
 
         }
-
-        public void GenerateKaratekaList()
-        {
-            Random rnd = new Random();
-            foreach (var person in databaseOperations.People)
-            {
-                Karateka karateka = new Karateka(rnd);
-                karateka.PersonID = person.ID;
-                karateka.UniversityID = person.UniversityID;
-                databaseOperations.Karatekas.Add(karateka);
-            }
-            databaseOperations.InsertKaratekas();
-            databaseOperations.LoadKaratekas();
-        }
-
-        public void GeneratePrimaryStatBlockList()
-        {
-            IGrade grade = new WhiteBelt() ;
-            Random rnd = new Random();
-            foreach (var person in databaseOperations.People)
-            {
-                foreach (var karateka in databaseOperations.Karatekas)
-                {
-                    if (karateka.PersonID == person.ID)
-                    {
-                        grade = karateka.Grade;
-                    }
-                }
-                PrimaryStatBlock primaryStatBlock = new PrimaryStatBlock(rnd,grade);
-                primaryStatBlock.PersonID = person.ID;
-                databaseOperations.PrimaryStatBlocks.Add(primaryStatBlock);
-            }
-            databaseOperations.InsertPrimaryStatBlocks();
-            databaseOperations.LoadPrimaryStatBlocks();
-        }
     }
 }

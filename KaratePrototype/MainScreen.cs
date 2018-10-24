@@ -10,8 +10,6 @@ namespace KaratePrototype
         DatabaseOperations databaseOperations = new DatabaseOperations();
         List<Person> currentlySelectedUniversityPeople = new List<Person>();
         Person SelectedPerson = new Person();
-        Karateka SelectedKarateka = new Karateka();
-        PrimaryStatBlock SelectedPrimaryStatBlock = new PrimaryStatBlock();
         DateTime currentDate = DateTime.Today;
 
         public MainScreen()
@@ -115,28 +113,10 @@ namespace KaratePrototype
         {
             int listIndex = peopleListBox.SelectedIndex;
             SelectedPerson = currentlySelectedUniversityPeople[listIndex];
-            
-            foreach (var karateka in databaseOperations.Karatekas)
-            {
-                if (SelectedPerson.ID == karateka.PersonID)
-                {
-                    SelectedKarateka = karateka;
-                    break;
-                }
-            }
 
-            foreach (var primaryStatBlock in databaseOperations.PrimaryStatBlocks)
-            {
-                if (SelectedPerson.ID == primaryStatBlock.PersonID)
-                {
-                    SelectedPrimaryStatBlock = primaryStatBlock;
-                    break;
-                }
-            }
-
-
-                personFullNameLabel.Text = SelectedPerson.FirstName + " " + SelectedPerson.SecondName;
-            
+            personFullNameLabel.Text = SelectedPerson.FirstName + " " + SelectedPerson.SecondName;
+            personPictureBox.ImageLocation = (@".\Creation\CreatedImages\" + SelectedPerson.ID + ".png");
+            personPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
             personNationalityLabel.Text = SelectedPerson.Nationality;
             personHeightLabel.Text = SelectedPerson.Height.ToString();
@@ -147,15 +127,14 @@ namespace KaratePrototype
             personAgeLabel.Text = age.ToString();
             personGenderLabel.Text = SelectedPerson.Gender.LongGender;
 
-            personDateJoinedLabel.Text = SelectedKarateka.StartDate.ToString("dd/MM/yyyy");
-            personGradeaLabel.Text = SelectedKarateka.Grade.GradeName;
+            personDateJoinedLabel.Text = SelectedPerson.StartDate.ToString("dd/MM/yyyy");
+            personGradeaLabel.Text = SelectedPerson.Grade.GradeName;
 
-            personSpeedLabel.Text = SelectedPrimaryStatBlock.Speed.Level.ToString();
-            personPowerLabel.Text = SelectedPrimaryStatBlock.Power.Level.ToString();
-            personStaminaLabel.Text = SelectedPrimaryStatBlock.Stamina.Level.ToString();
+            personSpeedLabel.Text = SelectedPerson.Speed.Level.ToString();
+            personPowerLabel.Text = SelectedPerson.Power.Level.ToString();
+            personStaminaLabel.Text = SelectedPerson.Stamina.Level.ToString();
 
-            personPictureBox.ImageLocation = (@".\Creation\CreatedImages\" + SelectedPerson.ID + ".png");
-            personPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            
         }
 
         private void nextDayButton_Click(object sender, EventArgs e)

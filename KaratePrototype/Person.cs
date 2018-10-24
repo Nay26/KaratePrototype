@@ -13,9 +13,20 @@ namespace KaratePrototype
         public double Height { get; set; }
         public int UniversityID { get; set; }
 
+        //Karate details
+        public IGrade Grade { get; set; }
+        public DateTime StartDate { get; set; }
+
+        //stats
+        public Statistic Speed { get; set; }
+        public Statistic Power { get; set; }
+        public Statistic Stamina { get; set; }
+
         public Person()
         {
-
+            Speed = new Statistic();
+            Power = new Statistic();
+            Stamina = new Statistic();
         }
 
         public Person(Random rnd) : this()
@@ -26,6 +37,9 @@ namespace KaratePrototype
             GenerateNationality(rnd);
             GenerateDateOfBirth(rnd);
             GenerateHeight(rnd);
+            Grade = GetRandomGrade(rnd);
+            StartDate = DateTime.Today;
+            GenerateStats(rnd);
         }
 
 
@@ -116,5 +130,44 @@ namespace KaratePrototype
 
         }
 
+        private IGrade GetRandomGrade(Random rnd)
+        {
+            IGrade grade = new WhiteBelt();
+            int roll = rnd.Next(0, 100);
+            if (roll < 25)
+            {
+                grade = new WhiteBelt();
+            }
+            else if (roll < 30)
+            {
+                grade = new OrangeBelt();
+            }
+            else if (roll < 35)
+            {
+                grade = new RedBelt();
+            }
+            else if (roll < 40)
+            {
+                grade = new YellowBelt();
+            }
+            else if (roll < 45)
+            {
+                grade = new GreenBelt();
+            }
+            else
+            {
+                grade = new WhiteBelt();
+            }
+            return grade;
+        }
+
+        private void GenerateStats(Random rnd)
+        {
+            int average = Grade.AverageStat;
+            int difference = 5;
+            Speed.Level = rnd.Next(average - difference, average + difference);
+            Power.Level = rnd.Next(average - difference, average + difference);
+            Stamina.Level = rnd.Next(average - difference, average + difference);
+        }
     }
 }

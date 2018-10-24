@@ -7,12 +7,14 @@ namespace KaratePrototype
 {
     class DatabaseOperations
     {
+        // The lists declared here are global representations of the database data.
         public static string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
         public SqlCommand myCommand;
         public SqlConnection conn;
         public List<University> Universities = new List<University>();
         public List<Person> People = new List<Person>();
 
+        // Set up the connection objects.
         public DatabaseOperations()
         {
             myCommand = new SqlCommand();
@@ -20,12 +22,14 @@ namespace KaratePrototype
             conn.ConnectionString = connectionString;
         }
 
+        // Runs the load methods for each table to fully load the database.
         public void LoadDatabaseData()
         {
             LoadUniversities();
             LoadPeople();
         }
 
+        // Selects all people from the People table and stores the data into the global people list.
         public void LoadPeople()
         {
             People.Clear();
@@ -99,6 +103,7 @@ namespace KaratePrototype
             conn.Close();
         }
 
+        // Selects all universities from the Universiites table and stores the data into the global people list.
         public void LoadUniversities()
         {
             Universities.Clear();
@@ -129,6 +134,7 @@ namespace KaratePrototype
 
         }
 
+        // Uses the XML university data file to intially populate the Universities table in the database.
         public void InsertUniversityXmlData()
         {
             string name = "";
@@ -171,6 +177,7 @@ namespace KaratePrototype
             conn.Close();
         }
 
+        // Takes the global People list and Inserts it into the People table in the database.
         public void InsertPeople()
         {
             conn.Open();

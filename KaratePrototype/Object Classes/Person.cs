@@ -4,6 +4,7 @@ namespace KaratePrototype
 {
     class Person
     {
+        // Base information (Won't change)
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
@@ -13,11 +14,11 @@ namespace KaratePrototype
         public double Height { get; set; }
         public int UniversityID { get; set; }
 
-        //Karate details
+        // Karate details
         public IGrade Grade { get; set; }
         public DateTime StartDate { get; set; }
 
-        //stats
+        // Statistics
         public Statistic Speed { get; set; }
         public Statistic Power { get; set; }
         public Statistic Stamina { get; set; }
@@ -31,7 +32,7 @@ namespace KaratePrototype
 
         public Person(Random rnd) : this()
         {
-           
+          
             GenerateGender(rnd);
             GenerateName(rnd);
             GenerateNationality(rnd);

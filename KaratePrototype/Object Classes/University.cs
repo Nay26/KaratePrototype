@@ -9,10 +9,5 @@
         public string Budget { get; set; }
         public string Logo { get; set; }
         public int BucsPoints { get; set; }
-
-        public University()
-        {
-
-        }
     }
 }

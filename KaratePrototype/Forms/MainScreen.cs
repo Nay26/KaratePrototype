@@ -12,22 +12,25 @@ namespace KaratePrototype
         Person SelectedPerson = new Person();
         DateTime currentDate = DateTime.Today;
 
+        // Initalise the main screen form.
         public MainScreen()
         {
             InitializeComponent();
-            LoadData();
+            databaseOperations.LoadDatabaseData();
             RetrivePlayerUniversityInfo();
+            PopulateFormItems();      
+        }
+
+        // Load the relevant information to all ui elements on the form.
+        public void PopulateFormItems()
+        {            
             PopulateUniversityComboBox();
             LoadUniversityImage();
             LoadUniversityName();
-            SetDate();          
+            SetDate();
         }
 
-        public void LoadData()
-        {
-            databaseOperations.LoadDatabaseData();
-        }
-
+        // Gets the University ID of the university the player selected from the textfile.
         private void RetrivePlayerUniversityInfo()
         {
             string line;
@@ -45,6 +48,7 @@ namespace KaratePrototype
             }
         }
 
+        // Populates the university combo box with the university names from the global Univrsities list.
         private void PopulateUniversityComboBox()
         {
             List<string> uniList = new List<string>();
@@ -57,33 +61,29 @@ namespace KaratePrototype
             universityComboBox.SelectedIndex = universityComboBox.FindStringExact(PlayerUniversity.Name);
         }
 
+        // Sets the date to current date.
         private void SetDate()
         {
             dateLabel.Text = currentDate.ToString("D");
         }
 
+        // Sets the name on some ui elements to that of the players selected university.
         private void LoadUniversityName()
         {
             universityNameLabel.Text = PlayerUniversity.Name;
             selectPlayerUniversityButton.Text = PlayerUniversity.Name;
         }
 
+        // Loads the logo of the players university into the picture box.
         private void LoadUniversityImage()
         {
             universityLogoPictureBox.ImageLocation = (@".\UniversityLogos\" + PlayerUniversity.Logo + ".png");
             universityLogoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
         }        
-
-        private void quitButton_Click(object sender, EventArgs e)
-        {
-            
-            Cleanup.CleanFilesAndDB();
-            Application.Exit();
-        }
-
+       
+        // When a university is selected fro the combo box, add all people from that university to the people listbox.
         private void universityComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
+        {         
             int universityID = 0;
             foreach (var uni in databaseOperations.Universities)
             {
@@ -93,7 +93,6 @@ namespace KaratePrototype
                     break;
                 }
             }
-
             currentlySelectedUniversityPeople.Clear();
             List<string> peopleNameList = new List<string>();
             foreach (var person in databaseOperations.People)
@@ -104,11 +103,10 @@ namespace KaratePrototype
                     peopleNameList.Add(person.FirstName + " " + person.SecondName);
                 }
             }
-
             peopleListBox.DataSource = peopleNameList;
-
         }
 
+        // When person is selected from listbox, load that persons information into the form.
         private void peopleListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int listIndex = peopleListBox.SelectedIndex;
@@ -132,22 +130,28 @@ namespace KaratePrototype
 
             personSpeedLabel.Text = SelectedPerson.Speed.Level.ToString();
             personPowerLabel.Text = SelectedPerson.Power.Level.ToString();
-            personStaminaLabel.Text = SelectedPerson.Stamina.Level.ToString();
-
-            
+            personStaminaLabel.Text = SelectedPerson.Stamina.Level.ToString();      
+        }
+       
+        // When the players university button is clicked, select that university from the combobox.
+        private void selectPlayerUniversityButton_Click(object sender, EventArgs e)
+        {
+            universityComboBox.SelectedItem = PlayerUniversity.Name;
         }
 
+        // When the next day button is clicked, change the current date to that date.
         private void nextDayButton_Click(object sender, EventArgs e)
         {
             currentDate = currentDate.AddDays(1);
             SetDate();
         }
 
-        private void selectPlayerUniversityButton_Click(object sender, EventArgs e)
+        // Runs the cleanup process and quits the application.
+        private void quitButton_Click(object sender, EventArgs e)
         {
-            universityComboBox.SelectedItem = PlayerUniversity.Name;
+
+            Cleanup.CleanFilesAndDB();
+            Application.Exit();
         }
-
-
     }
 }

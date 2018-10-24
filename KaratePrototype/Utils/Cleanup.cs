@@ -27,9 +27,7 @@ namespace KaratePrototype
             myCommand = new SqlCommand(query, conn);
             myCommand.ExecuteNonQuery();
 
-
             conn.Close();
-
 
             System.IO.DirectoryInfo di = new DirectoryInfo(@".\Creation\CreatedImages");
 

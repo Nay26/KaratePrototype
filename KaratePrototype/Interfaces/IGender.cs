@@ -9,6 +9,5 @@
         string PossesivePronoun { get; set; }
         string Reflexive { get; set; }
         string TextFilePath { get; set; }
-
     }
 }

@@ -6,15 +6,15 @@ namespace KaratePrototype
 {
     class GeneratePeople
     {
-        public string connectionString;
         DatabaseOperations databaseOperations;
 
+        // On instantiation load the database operations object from the select university form.
         public GeneratePeople(DatabaseOperations dataOp)
         {
             databaseOperations = dataOp;
-            connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\naomi\source\repos\KaratePrototype\KaratePrototype\KaratePrototype.mdf;Integrated Security=True";
         }
 
+        // The main method to populate all universities in the database with new generated people.
         public void PopulateUniversities()
         {
             List<int> universityIDList = new List<int>();
@@ -37,10 +37,11 @@ namespace KaratePrototype
             databaseOperations.LoadPeople();
         }
 
+        // For the university asociated with the university ID, Add a number(GenerateNumberOfPeople()) of new people who go to that uni..
         private List<Person> GeneratePeopleList(int uniID, int uniRep, Random rnd)
         {
             List<Person> peopleList = new List<Person>();        
-            int numberToGen = GenerateNumberOfPeople(uniID, uniRep);
+            int numberToGen = GenerateNumberOfPeople(uniRep);
             for (int i = 0; i < numberToGen; i++)
             {
                 Person person = new Person(rnd);
@@ -50,13 +51,15 @@ namespace KaratePrototype
             return peopleList;
         }
 
-        private int GenerateNumberOfPeople(int uniID, int uniRep)        
+        // Use the universities reputation to generate an integer amount of new people based on that reputation.
+        private int GenerateNumberOfPeople(int uniRep)
         {
             int num = 25 + uniRep;
             return num;
         }
-        
-        public void GenerateFaces(int uniid)
+
+        // Generates face images for all people in the database assosiated with given UniversityID.
+        public void GenerateFaces(int uniid, Random rnd, ImageCombiner combiner)
         {
             List<int> peopleIDList = new List<int>();
             foreach (var person in databaseOperations.People)
@@ -66,22 +69,12 @@ namespace KaratePrototype
                     peopleIDList.Add(person.ID);
                 }
             }
-
-            Random rnd = new Random();            
-            List<Image> imageLayerList = new List<Image>() ;
-            ImageCombiner combiner = new ImageCombiner();
-            RandomFileGrabber grabber = new RandomFileGrabber();
-
             foreach (var personid in peopleIDList)
             {
-                imageLayerList = grabber.SelectRandomImageFromDirectories(rnd);
-                Bitmap faceImage = combiner.MergeImageLayers(imageLayerList);
-                combiner.SaveImage(faceImage, personid);
-                faceImage.Dispose();
+                combiner.SelectRandomImageFromDirectories(rnd,personid);                         
             }
-            imageLayerList.Clear();
-            imageLayerList.TrimExcess();
-
+            peopleIDList.Clear();
+            peopleIDList.TrimExcess();
         }
     }
 }

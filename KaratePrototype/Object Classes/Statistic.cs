@@ -4,7 +4,6 @@ namespace KaratePrototype
 {
     class Statistic
     {
-
         private double Constant = 250;
         private int maxLevel = 99;
         
@@ -19,8 +18,7 @@ namespace KaratePrototype
                 } 
                 CalculateLevel();
             }
-        }
-        
+        }       
         
         private int level;
         public int Level
@@ -37,15 +35,8 @@ namespace KaratePrototype
                 {
                     level = 1;
                 }
-                CalculateXP();
-               
-            }
-            
-        }
-
-        public Statistic()
-        {
-
+                CalculateXP();              
+            }           
         }
 
         public void AddXP(double xp)

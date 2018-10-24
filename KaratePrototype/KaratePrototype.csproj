@@ -79,7 +79,6 @@
     <Compile Include="Forms\MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\RandomFileGrabber.cs" />
     <Compile Include="Forms\SelectUniversityForm.cs">
       <SubType>Form</SubType>
     </Compile>

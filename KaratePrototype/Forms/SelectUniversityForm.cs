@@ -8,31 +8,20 @@ namespace KaratePrototype
 {
     public partial class SelectUniversityForm : Form
     {
-
+        // Always need a database operations object on all forms.
         public int UniversityID;
         DatabaseOperations databaseOperations = new DatabaseOperations();
 
+        // Initialisation ( Insert university info to Database then Load that info from the database with the generated ID's).
         public SelectUniversityForm()
         {
             InitializeComponent();
             databaseOperations.InsertUniversityXmlData();
             databaseOperations.LoadUniversities();
             PopulateUniversityListbox();
-
-            List<Statistic> statList = new List<Statistic>();
-            for (int i = 0; i < 100; i++)
-            {
-                Statistic stat = new Statistic();
-                stat.Level = i;
-                stat.CalculateXP();
-                statList.Add(stat);
-            }
-            for (int i = 0; i < 100; i++)
-            {
-                Console.WriteLine(statList[i].Level + " : " + statList[i].Experiance);
-            }
         }
 
+        // Use the list of universities (From database operations object) to populate the listbox with the university names.
         private void PopulateUniversityListbox()
         {
             List<string> uniList = new List<string>();
@@ -44,10 +33,10 @@ namespace KaratePrototype
             universityListBox.DataSource = uniList;
         }
        
-        // Change this at some point depending on if want to store the uni description in the database.
+        // When the user selects an option from the listbox, Load the university information from the xml file (because uni description not stroed in database)
+        // Output this information into the right hand uni details section of the form.
         private void universityListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
+        {           
             string universityName = universityListBox.Text;
             string logoFilePath = "";
             universityNameLabel.Text = universityName;
@@ -70,32 +59,27 @@ namespace KaratePrototype
             }  
         }
 
+        // When the start button is clicked, save the users selected university to a textfile,
+        // Generate people for all universities, generate face images for those people,
+        // Load the main form.
         private void startButton_Click(object sender, EventArgs e)
         {
             SelectPlayerUniversity();
             GeneratePeople generatePeople = new GeneratePeople(databaseOperations);
-            generatePeople.PopulateUniversities();
+            ImageCombiner combiner = new ImageCombiner();
+            Random rnd = new Random();
+            //generatePeople.PopulateUniversities();
             //foreach (var uni in databaseOperations.Universities)
             //{
             //    Console.WriteLine("Generating Faces for " + uni.Name);
-            //    generatePeople.GenerateFaces(uni.ID);
+            //    generatePeople.GenerateFaces(uni.ID, rnd, combiner);
             //}
-            generatePeople.GenerateFaces(UniversityID);
-            Console.WriteLine("Finished Generating Faces");
+            generatePeople.GenerateFaces(UniversityID, rnd, combiner);
             GoToMainScreen();
 
         }
 
-        public void GoToMainScreen()
-        {
-
-            MainScreen main = new MainScreen();
-            main.Show();
-            main.Left = this.Left;
-            main.Top = this.Top;
-            this.Hide();
-        }
-
+        // Gets the university name from the currently selected option in the listbox and saves to a textfile.
         private void SelectPlayerUniversity()
         {
             string name = universityNameLabel.Text;
@@ -115,6 +99,18 @@ namespace KaratePrototype
             }
         }
 
+        // Replaces current form with the main form.
+        public void GoToMainScreen()
+        {
+
+            MainScreen main = new MainScreen();
+            main.Show();
+            main.Left = this.Left;
+            main.Top = this.Top;
+            this.Hide();
+        }
+
+        // Runs the database and folder cleanup (for testing) and quits the application.
         private void quitButton_Click(object sender, EventArgs e)
         {
             Cleanup.CleanFilesAndDB();

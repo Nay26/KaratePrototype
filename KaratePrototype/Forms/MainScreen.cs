@@ -11,9 +11,9 @@ namespace KaratePrototype
         List<Person> currentlySelectedUniversityPeople = new List<Person>();
         Person SelectedPerson = new Person();
         DateTime currentDate = DateTime.Today;
-        int speedTrainingValue = 0;
-        int powerTrainingValue = 0;
-        int staminaTrainingValue = 0;
+        int kihonTrainingValue = 0;
+        int kataTrainingValue = 0;
+        int kumiteTrainingValue = 0;
         int TrainingPointsRemaining = 200;
         bool[] TrainingDates = new bool[7];
 
@@ -177,8 +177,21 @@ namespace KaratePrototype
             personSpeedLabel.Text = SelectedPerson.Speed.Level.ToString();
             personPowerLabel.Text = SelectedPerson.Power.Level.ToString();
             personStaminaLabel.Text = SelectedPerson.Stamina.Level.ToString();
+            personCoordinationLabel.Text = SelectedPerson.Coordination.Level.ToString();
+            personPrecisionLabel.Text = SelectedPerson.Precision.Level.ToString();
+            personMentalLabel.Text = SelectedPerson.Mental.Level.ToString();
+            personPotentialLabel.Text = SelectedPerson.Potential.Level.ToString();
+            personKataLabel.Text = SelectedPerson.Kata.Level.ToString();
+            personKumiteLabel.Text = SelectedPerson.Kumite.Level.ToString();
+            personKihonLabel.Text = SelectedPerson.Kihon.Level.ToString();
+            personPunchingLabel.Text = SelectedPerson.Punching.Level.ToString();
+            personKickingLabel.Text = SelectedPerson.Kicking.Level.ToString();
+            personDefenseLabel.Text = SelectedPerson.Defense.Level.ToString();
+            personLearningRateLabel.Text = SelectedPerson.LearningRate.ToString();
+            personKarateIQLabel.Text = SelectedPerson.KarateIQ.Level.ToString();
+            personBMILabel.Text = SelectedPerson.BMI.ToString();
+            personWeightLabel.Text = SelectedPerson.Weight.ToString();
 
-            personUniversityNameLabel.Text = universityComboBox.Text;
         }
 
 
@@ -265,9 +278,19 @@ namespace KaratePrototype
         {
             int increment = 0;
             increment = rnd.Next(-50,50);
-            person.Speed.AddXP(speedTrainingValue+increment);
-            person.Power.AddXP(powerTrainingValue+increment);
-            person.Stamina.AddXP(staminaTrainingValue+increment);
+            person.Speed.AddXP(kihonTrainingValue+increment);
+            person.Power.AddXP(kataTrainingValue+increment);
+            person.Stamina.AddXP(kumiteTrainingValue + increment);
+            person.Coordination.AddXP(kihonTrainingValue + increment);
+            person.Precision.AddXP(kataTrainingValue + increment);
+            person.Mental.AddXP(kihonTrainingValue + increment);
+            person.KarateIQ.AddXP(kihonTrainingValue + increment);
+            person.Kata.AddXP(kataTrainingValue + increment);
+            person.Kumite.AddXP(kumiteTrainingValue + increment);
+            person.Kihon.AddXP(kihonTrainingValue + increment);
+            person.Punching.AddXP(kumiteTrainingValue + increment);
+            person.Kicking.AddXP(kumiteTrainingValue + increment);
+            person.Defense.AddXP(kumiteTrainingValue + increment);
         }
 
 
@@ -276,23 +299,23 @@ namespace KaratePrototype
 
         private void speedTrainingTrackBar_Scroll(object sender, EventArgs e)
         {
-            TrackBar trackbar = speedTrainingTrackBar;
-            Label trainingLabel = speedTrainingNumberLabel;
-            speedTrainingValue = UpdateTrainingTrackBars(trackbar,trainingLabel,speedTrainingValue);
+            TrackBar trackbar = kihonTrainingTrackBar;
+            Label trainingLabel = kihonTrainingNumberLabel;
+            kihonTrainingValue = UpdateTrainingTrackBars(trackbar,trainingLabel,kihonTrainingValue);
         }
 
         private void powerTrainingTrackBar_Scroll(object sender, EventArgs e)
         {
-            TrackBar trackbar = powerTrainingTrackBar;
-            Label trainingLabel = powerTrainingNumberLabel;
-            powerTrainingValue = UpdateTrainingTrackBars(trackbar, trainingLabel, powerTrainingValue);
+            TrackBar trackbar = kataTrainingTrackBar;
+            Label trainingLabel = kataTrainingNumberLabel;
+            kataTrainingValue = UpdateTrainingTrackBars(trackbar, trainingLabel, kataTrainingValue);
         }
 
         private void staminaTrainingTrackBar_Scroll(object sender, EventArgs e)
         {
-            TrackBar trackbar = staminaTrainingTrackBar;
-            Label trainingLabel = staminaTrainingNumberLabel;
-            staminaTrainingValue = UpdateTrainingTrackBars(trackbar, trainingLabel, staminaTrainingValue);
+            TrackBar trackbar = kumiteTrainingTrackBar;
+            Label trainingLabel = kumiteTrainingNumberLabel;
+            kumiteTrainingValue = UpdateTrainingTrackBars(trackbar, trainingLabel, kumiteTrainingValue);
         }
 
         private int UpdateTrainingTrackBars(TrackBar trackbar, Label label,int prevvalue)

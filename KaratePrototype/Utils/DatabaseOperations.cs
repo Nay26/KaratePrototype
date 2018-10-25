@@ -120,6 +120,20 @@ namespace KaratePrototype
                     person.Speed.Experiance = reader.GetDouble(10);
                     person.Power.Experiance = reader.GetDouble(11);
                     person.Stamina.Experiance = reader.GetDouble(12);
+                    person.Coordination.Experiance = reader.GetDouble(13);
+                    person.Precision.Experiance = reader.GetDouble(14);
+                    person.Mental.Experiance = reader.GetDouble(15);
+                    person.Potential.Experiance = reader.GetDouble(16);
+                    person.Kata.Experiance = reader.GetDouble(17);
+                    person.Kumite.Experiance = reader.GetDouble(18);
+                    person.Kihon.Experiance = reader.GetDouble(19);
+                    person.Punching.Experiance = reader.GetDouble(20);
+                    person.Kicking.Experiance = reader.GetDouble(21);
+                    person.Defense.Experiance = reader.GetDouble(22);
+                    person.KarateIQ.Experiance = reader.GetDouble(23);
+                    person.BMI = reader.GetDouble(24);
+                    person.Weight = reader.GetDouble(25);
+                    person.LearningRate = reader.GetDouble(26);
                     People.Add(person);
                 }
             }
@@ -212,7 +226,7 @@ namespace KaratePrototype
             { 
                 try
                 {
-                    string query = "INSERT INTO People (UniversityID, FirstName, SecondName, Nationality, Height, DateOfBirth, Gender, Grade, StartDate,Speed,Power,Stamina) VALUES (@uniid, @firstname, @secondname, @nationality, @height, @dateofbirth, @gender, @grade, @startdate, @speed, @power, @stamina);";
+                    string query = "INSERT INTO People (UniversityID, FirstName, SecondName, Nationality, Height, DateOfBirth, Gender, Grade, StartDate,Speed,Power,Stamina, Coordination, Precision, Mental, Potential, Kata, Kumite, Kihon, Punching, Kicking, Defense, KarateIQ, BMI, Weight, LearningRate) VALUES (@uniid, @firstname, @secondname, @nationality, @height, @dateofbirth, @gender, @grade, @startdate, @speed, @power, @stamina, @coordination, @precision,@mental,@potential,@kata,@kumite,@kihon,@punching,@kicking,@defense,@karateiq,@bmi,@weight,@learningrate);";
                     myCommand = new SqlCommand(query, conn);
                     myCommand.Parameters.AddWithValue("@uniid", person.UniversityID);
                     myCommand.Parameters.AddWithValue("@firstname", person.FirstName);
@@ -226,6 +240,20 @@ namespace KaratePrototype
                     myCommand.Parameters.AddWithValue("@speed", person.Speed.Experiance);
                     myCommand.Parameters.AddWithValue("@power", person.Power.Experiance);
                     myCommand.Parameters.AddWithValue("@stamina", person.Stamina.Experiance);
+                    myCommand.Parameters.AddWithValue("@coordination", person.Coordination.Experiance);
+                    myCommand.Parameters.AddWithValue("@precision", person.Precision.Experiance);
+                    myCommand.Parameters.AddWithValue("@mental", person.Mental.Experiance);
+                    myCommand.Parameters.AddWithValue("@potential", person.Potential.Experiance);
+                    myCommand.Parameters.AddWithValue("@kata", person.Kata.Experiance);
+                    myCommand.Parameters.AddWithValue("@kumite", person.Kumite.Experiance);
+                    myCommand.Parameters.AddWithValue("@kihon", person.Kihon.Experiance);
+                    myCommand.Parameters.AddWithValue("@punching", person.Punching.Experiance);
+                    myCommand.Parameters.AddWithValue("@kicking", person.Kicking.Experiance);
+                    myCommand.Parameters.AddWithValue("@defense", person.Defense.Experiance);
+                    myCommand.Parameters.AddWithValue("@karateiq", person.KarateIQ.Experiance);
+                    myCommand.Parameters.AddWithValue("@bmi", person.BMI);
+                    myCommand.Parameters.AddWithValue("@weight", person.Weight);
+                    myCommand.Parameters.AddWithValue("@learningrate", person.LearningRate);
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e)
@@ -245,7 +273,7 @@ namespace KaratePrototype
             {
                 try
                 {
-                    string query = "UPDATE People SET UniversityID = @uniid, FirstName = @firstname, SecondName=@secondname, Nationality=@nationality, Height=@height, DateOfBirth=@dateofbirth, Gender=@gender, Grade=@grade, StartDate=@startdate,Speed=@speed,Power=@power,Stamina=@stamina WHERE PersonID = @personid;";
+                    string query = "UPDATE People SET UniversityID = @uniid, FirstName = @firstname, SecondName=@secondname, Nationality=@nationality, Height=@height, DateOfBirth=@dateofbirth, Gender=@gender, Grade=@grade, StartDate=@startdate,Speed=@speed,Power=@power,Stamina=@stamina, Coordination=@coordination, Precision=@precision, Mental=@mental, Potential=@potential, Kata=@kata, Kumite=@kumite, Kihon=@kihon, Punching=@punching, Kicking=@kicking, Defense=@defense, KarateIQ=@karateiq, BMI=@bmi, Weight=@weight, LearningRate=@learningrate WHERE PersonID = @personid;";
                     myCommand = new SqlCommand(query, conn);
                     myCommand.Parameters.AddWithValue("@personid", person.ID);
                     myCommand.Parameters.AddWithValue("@uniid", person.UniversityID);
@@ -260,6 +288,20 @@ namespace KaratePrototype
                     myCommand.Parameters.AddWithValue("@speed", person.Speed.Experiance);
                     myCommand.Parameters.AddWithValue("@power", person.Power.Experiance);
                     myCommand.Parameters.AddWithValue("@stamina", person.Stamina.Experiance);
+                    myCommand.Parameters.AddWithValue("@coordination", person.Coordination.Experiance);
+                    myCommand.Parameters.AddWithValue("@precision", person.Precision.Experiance);
+                    myCommand.Parameters.AddWithValue("@mental", person.Mental.Experiance);
+                    myCommand.Parameters.AddWithValue("@potential", person.Potential.Experiance);
+                    myCommand.Parameters.AddWithValue("@kata", person.Kata.Experiance);
+                    myCommand.Parameters.AddWithValue("@kumite", person.Kumite.Experiance);
+                    myCommand.Parameters.AddWithValue("@kihon", person.Kihon.Experiance);
+                    myCommand.Parameters.AddWithValue("@punching", person.Punching.Experiance);
+                    myCommand.Parameters.AddWithValue("@kicking", person.Kicking.Experiance);
+                    myCommand.Parameters.AddWithValue("@defense", person.Defense.Experiance);
+                    myCommand.Parameters.AddWithValue("@karateiq", person.KarateIQ.Experiance);
+                    myCommand.Parameters.AddWithValue("@bmi", person.BMI);
+                    myCommand.Parameters.AddWithValue("@weight", person.Weight);
+                    myCommand.Parameters.AddWithValue("@learningrate", person.LearningRate);
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception e)

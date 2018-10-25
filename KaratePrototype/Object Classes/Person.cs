@@ -22,12 +22,38 @@ namespace KaratePrototype
         public Statistic Speed { get; set; }
         public Statistic Power { get; set; }
         public Statistic Stamina { get; set; }
+        public Statistic Coordination { get; set; }
+        public Statistic Precision { get; set; }
+        public Statistic Mental { get; set; }
+        public Statistic Potential { get; set; }
+        public double LearningRate { get; set; }
+        public double Weight { get; set; }
+        public double BMI { get; set; }
+
+        public Statistic Kata { get; set; }
+        public Statistic Kumite { get; set; }
+        public Statistic Kihon { get; set; }
+        public Statistic Punching { get; set; }
+        public Statistic Kicking { get; set; }
+        public Statistic Defense { get; set; }
+        public Statistic KarateIQ { get; set; }
 
         public Person()
         {
             Speed = new Statistic();
             Power = new Statistic();
             Stamina = new Statistic();
+            Coordination = new Statistic();
+            Precision = new Statistic();
+            Mental = new Statistic();
+            Potential = new Statistic();
+            Kata = new Statistic();
+            Kumite = new Statistic();
+            Kihon = new Statistic();
+            Punching = new Statistic();
+            Kicking = new Statistic();
+            Defense = new Statistic();
+            KarateIQ = new Statistic();
         }
 
         public Person(Random rnd) : this()
@@ -39,9 +65,26 @@ namespace KaratePrototype
             GenerateHeight(rnd);
             Grade = GetRandomGrade(rnd);
             StartDate = DateTime.Today;
+            GenerateBMI(rnd);
+            GetNewWeight();
+            GenerateLearningRate(rnd);
             GenerateStats(rnd);
         }
 
+        private void GenerateBMI(Random rnd)
+        {
+            BMI = Math.Round(((rnd.NextDouble() * 17) + 10),1);
+        }
+
+        public void GetNewWeight()
+        {
+            Weight = Math.Round(BMI * ((Height/100) * (Height/100)),1);
+        }
+
+        private void GenerateLearningRate(Random rnd)
+        {
+            LearningRate = Math.Round(((rnd.NextDouble()/2)-0.25), 2);
+        }
 
         private void GenerateGender(Random rnd)
         {
@@ -203,14 +246,25 @@ namespace KaratePrototype
             Speed.Level = rnd.Next(average - difference, average + difference);
             Power.Level = rnd.Next(average - difference, average + difference);
             Stamina.Level = rnd.Next(average - difference, average + difference);
+            Coordination.Level = rnd.Next(average - difference, average + difference);
+            Precision.Level = rnd.Next(average - difference, average + difference);
+            Mental.Level = rnd.Next(average - difference, average + difference);
+            Potential.Level = rnd.Next(50,99);
+            Kata.Level = rnd.Next(average - difference, average + difference);
+            Kumite.Level = rnd.Next(average - difference, average + difference);
+            Punching.Level = rnd.Next(average - difference, average + difference);
+            Kicking.Level = rnd.Next(average - difference, average + difference);
+            Kihon.Level = rnd.Next(average - difference, average + difference);
+            Defense.Level = rnd.Next(average - difference, average + difference);
+            KarateIQ.Level = rnd.Next(average - difference, average + difference);
         }
 
         public int GetOverallRating()
         {
             int rating = 0;
             double sum = 0;
-            sum = Power.Level + Speed.Level + Stamina.Level;
-            sum = sum / 3;
+            sum = Power.Level + Speed.Level + Stamina.Level + Coordination.Level + Precision.Level + Mental.Level + Potential.Level + Kata.Level + Kumite.Level + Kihon.Level + Punching.Level + Kicking.Level + Defense.Level + KarateIQ.Level;
+            sum = sum / 13;
             sum = Math.Round(sum,0);
             rating = Convert.ToInt32(sum);
             return rating;

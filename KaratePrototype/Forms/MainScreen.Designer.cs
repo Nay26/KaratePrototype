@@ -39,7 +39,7 @@
             this.personUniversityNameLabel = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.infoTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -313,7 +313,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.richTextBox1);
+            this.groupBox6.Controls.Add(this.infoTextBox);
             this.groupBox6.Location = new System.Drawing.Point(14, 207);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(369, 109);
@@ -321,13 +321,13 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Information";
             // 
-            // richTextBox1
+            // infoTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 20);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(354, 83);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.infoTextBox.Location = new System.Drawing.Point(6, 20);
+            this.infoTextBox.Name = "infoTextBox";
+            this.infoTextBox.Size = new System.Drawing.Size(354, 83);
+            this.infoTextBox.TabIndex = 0;
+            this.infoTextBox.Text = "";
             // 
             // groupBox5
             // 
@@ -1643,7 +1643,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.MonthCalendar Calendar;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox infoTextBox;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.CheckBox fridayCheckBox;

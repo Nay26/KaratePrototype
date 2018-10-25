@@ -204,6 +204,19 @@ namespace KaratePrototype
             SimulateDay();
             currentDate = currentDate.AddDays(1);
             SetDate();
+            WriteBirthdays();
+        }
+
+        private void WriteBirthdays()
+        {
+            infoTextBox.Clear();
+            foreach (var person in databaseOperations.People)
+            {
+                if (person.DateOfBirth.DayOfYear == currentDate.DayOfYear)
+                {
+                    infoTextBox.AppendText("It is " + person.FirstName + " " + person.SecondName + "s birthday today! Be sure to wish " + person.Gender.Objective + " a Happy Birthday! \n");
+                }
+            }
         }
 
         // Day simulation

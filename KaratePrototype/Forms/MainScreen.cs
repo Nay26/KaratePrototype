@@ -11,7 +11,11 @@ namespace KaratePrototype
         List<Person> currentlySelectedUniversityPeople = new List<Person>();
         Person SelectedPerson = new Person();
         DateTime currentDate = DateTime.Today;
-
+        int speedTrainingValue = 0;
+        int powerTrainingValue = 0;
+        int staminaTrainingValue = 0;
+        int TrainingPointsRemaining = 200;
+        bool[] TrainingDates = new bool[7];
 
         //+++++++++++++++ INITIALISATION +++++++++++++++++++++++++
 
@@ -68,6 +72,10 @@ namespace KaratePrototype
         private void SetDate()
         {
             dateLabel.Text = currentDate.ToString("D");
+            
+            Calendar.SetDate(currentDate);
+            Calendar.TodayDate = currentDate;
+            Calendar.Update();
         }
 
         // Sets the name on some ui elements to that of the players selected university.
@@ -169,6 +177,8 @@ namespace KaratePrototype
             personSpeedLabel.Text = SelectedPerson.Speed.Level.ToString();
             personPowerLabel.Text = SelectedPerson.Power.Level.ToString();
             personStaminaLabel.Text = SelectedPerson.Stamina.Level.ToString();
+
+            personUniversityNameLabel.Text = universityComboBox.Text;
         }
 
 
@@ -186,14 +196,68 @@ namespace KaratePrototype
         // Day simulation
         private void SimulateDay()
         {
-            Random rnd = new Random();
-            foreach (var person in databaseOperations.People)
+            bool canTrain = false;
+            switch (currentDate.DayOfWeek)
             {
-                SimulateTraining(person, rnd);
+                case DayOfWeek.Monday:
+                    if (TrainingDates[0] == true)
+                    {
+                        canTrain = true;
+                    }
+                    break;
+                case DayOfWeek.Tuesday:
+                    if (TrainingDates[1] == true)
+                    {
+                        canTrain = true;
+                    }
+                    break;
+                case DayOfWeek.Wednesday:
+                    if (TrainingDates[2] == true)
+                    {
+                        canTrain = true;
+                    }
+                    break;
+                case DayOfWeek.Thursday:
+                    if (TrainingDates[3] == true)
+                    {
+                        canTrain = true;
+                    }
+                    break;
+                case DayOfWeek.Friday:
+                    if (TrainingDates[4] == true)
+                    {
+                        canTrain = true;
+                    }
+                    break;
+                case DayOfWeek.Saturday:
+                    if (TrainingDates[5] == true)
+                    {
+                        canTrain = true;
+                    }
+                    break;
+                case DayOfWeek.Sunday:
+                    if (TrainingDates[6] == true)
+                    {
+                        canTrain = true;
+                    }
+                    break;
+                default:
+                    canTrain = false;
+                    break;
             }
-            databaseOperations.UpdatePeople();
-            UpdateSelectedPeopleList();
-            UpdatePersonInfo();
+
+            if (canTrain == true)
+            {
+                Random rnd = new Random();
+                foreach (var person in databaseOperations.People)
+                {
+                    SimulateTraining(person, rnd);
+                }
+                //databaseOperations.UpdatePeople();
+                UpdateSelectedPeopleList();
+                UpdatePersonInfo();
+            }
+            
         }
 
         // Training simulation
@@ -201,10 +265,90 @@ namespace KaratePrototype
         {
             int increment = 0;
             increment = rnd.Next(-50,50);
-            person.Speed.AddXP(100+increment);
-            person.Power.AddXP(100+increment);
-            person.Stamina.AddXP(100+increment);
+            person.Speed.AddXP(speedTrainingValue+increment);
+            person.Power.AddXP(powerTrainingValue+increment);
+            person.Stamina.AddXP(staminaTrainingValue+increment);
         }
-    
+
+
+
+        //+++++++++++++++++ Training Sliders ++++++++++++++++++++++++++++++++++++++
+
+        private void speedTrainingTrackBar_Scroll(object sender, EventArgs e)
+        {
+            TrackBar trackbar = speedTrainingTrackBar;
+            Label trainingLabel = speedTrainingNumberLabel;
+            speedTrainingValue = UpdateTrainingTrackBars(trackbar,trainingLabel,speedTrainingValue);
+        }
+
+        private void powerTrainingTrackBar_Scroll(object sender, EventArgs e)
+        {
+            TrackBar trackbar = powerTrainingTrackBar;
+            Label trainingLabel = powerTrainingNumberLabel;
+            powerTrainingValue = UpdateTrainingTrackBars(trackbar, trainingLabel, powerTrainingValue);
+        }
+
+        private void staminaTrainingTrackBar_Scroll(object sender, EventArgs e)
+        {
+            TrackBar trackbar = staminaTrainingTrackBar;
+            Label trainingLabel = staminaTrainingNumberLabel;
+            staminaTrainingValue = UpdateTrainingTrackBars(trackbar, trainingLabel, staminaTrainingValue);
+        }
+
+        private int UpdateTrainingTrackBars(TrackBar trackbar, Label label,int prevvalue)
+        {
+            int difference = 0;
+            int maxMovement = prevvalue + TrainingPointsRemaining;
+            
+            if (trackbar.Value > maxMovement)
+            {
+                trackbar.Value = (prevvalue);
+            }
+            
+            difference = prevvalue - trackbar.Value;
+            TrainingPointsRemaining = TrainingPointsRemaining + difference;
+
+            trainingPointsNumberLabel.Text = TrainingPointsRemaining.ToString();
+            label.Text = trackbar.Value.ToString();
+            return trackbar.Value;
+        }
+
+
+
+        //+++++++++++++++++++ Training Dates +++++++++++++++++++++++++++++++
+        private void mondayCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            TrainingDates[0] = mondayCheckBox.Checked;
+        }
+
+        private void tuesdayCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            TrainingDates[1] = tuesdayCheckBox.Checked;
+        }
+
+        private void wednesdayCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            TrainingDates[2] = wednesdayCheckBox.Checked;
+        }
+
+        private void thursdayCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            TrainingDates[3] = thursdayCheckBox.Checked;
+        }
+
+        private void fridayCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            TrainingDates[4] = fridayCheckBox.Checked;
+        }
+
+        private void saturdayCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            TrainingDates[5] = saturdayCheckBox.Checked;
+        }
+
+        private void sundayCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            TrainingDates[6] = sundayCheckBox.Checked;
+        }
     }
 }

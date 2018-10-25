@@ -35,6 +35,39 @@
             this.universityComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.peopleListBox = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.personUniversityNameLabel = new System.Windows.Forms.Label();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.sundayCheckBox = new System.Windows.Forms.CheckBox();
+            this.wednesdayCheckBox = new System.Windows.Forms.CheckBox();
+            this.saturdayCheckBox = new System.Windows.Forms.CheckBox();
+            this.thursdayCheckBox = new System.Windows.Forms.CheckBox();
+            this.fridayCheckBox = new System.Windows.Forms.CheckBox();
+            this.tuesdayCheckBox = new System.Windows.Forms.CheckBox();
+            this.mondayCheckBox = new System.Windows.Forms.CheckBox();
+            this.Calendar = new System.Windows.Forms.MonthCalendar();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.trainingPointsNumberLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.staminaTrainingLabel = new System.Windows.Forms.Label();
+            this.staminaTrainingNumberLabel = new System.Windows.Forms.Label();
+            this.staminaTrainingTrackBar = new System.Windows.Forms.TrackBar();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.powerTrainingLabel = new System.Windows.Forms.Label();
+            this.powerTrainingNumberLabel = new System.Windows.Forms.Label();
+            this.powerTrainingTrackBar = new System.Windows.Forms.TrackBar();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.speedTrainingLabel = new System.Windows.Forms.Label();
+            this.speedTrainingNumberLabel = new System.Windows.Forms.Label();
+            this.speedTrainingTrackBar = new System.Windows.Forms.TrackBar();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.personPictureBox = new System.Windows.Forms.PictureBox();
             this.personOverallRatingLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,6 +97,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.personGenderLabel = new System.Windows.Forms.Label();
             this.personFullNameLabel = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.dateLabel = new System.Windows.Forms.Label();
             this.universityNameLabel = new System.Windows.Forms.Label();
             this.universityLogoPictureBox = new System.Windows.Forms.PictureBox();
@@ -77,11 +111,28 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staminaTrainingTrackBar)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.powerTrainingTrackBar)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.speedTrainingTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universityLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,12 +150,12 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.splitContainer1.Panel2.Controls.Add(this.dateLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.panel5);
             this.splitContainer1.Panel2.Controls.Add(this.universityNameLabel);
             this.splitContainer1.Panel2.Controls.Add(this.universityLogoPictureBox);
             this.splitContainer1.Panel2.Controls.Add(this.nextDayButton);
             this.splitContainer1.Panel2.Controls.Add(this.quitButton);
-            this.splitContainer1.Size = new System.Drawing.Size(1129, 645);
+            this.splitContainer1.Size = new System.Drawing.Size(1416, 645);
             this.splitContainer1.SplitterDistance = 564;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -126,6 +177,9 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer2.Panel2.Controls.Add(this.panel1);
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Panel2.Controls.Add(this.splitter1);
             this.splitContainer2.Panel2.Controls.Add(this.personPictureBox);
             this.splitContainer2.Panel2.Controls.Add(this.personOverallRatingLabel);
             this.splitContainer2.Panel2.Controls.Add(this.label8);
@@ -133,8 +187,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer2.Panel2.Controls.Add(this.personFullNameLabel);
-            this.splitContainer2.Size = new System.Drawing.Size(1129, 564);
-            this.splitContainer2.SplitterDistance = 270;
+            this.splitContainer2.Size = new System.Drawing.Size(1416, 564);
+            this.splitContainer2.SplitterDistance = 269;
             this.splitContainer2.TabIndex = 0;
             // 
             // selectPlayerUniversityButton
@@ -186,10 +240,395 @@
             this.peopleListBox.TabIndex = 0;
             this.peopleListBox.SelectedIndexChanged += new System.EventHandler(this.peopleListBox_SelectedIndexChanged);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.personUniversityNameLabel);
+            this.panel1.Location = new System.Drawing.Point(272, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(470, 34);
+            this.panel1.TabIndex = 0;
+            // 
+            // personUniversityNameLabel
+            // 
+            this.personUniversityNameLabel.AutoSize = true;
+            this.personUniversityNameLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.personUniversityNameLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personUniversityNameLabel.Location = new System.Drawing.Point(207, 0);
+            this.personUniversityNameLabel.Name = "personUniversityNameLabel";
+            this.personUniversityNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.personUniversityNameLabel.Size = new System.Drawing.Size(263, 28);
+            this.personUniversityNameLabel.TabIndex = 13;
+            this.personUniversityNameLabel.Text = "Persons University Here";
+            this.personUniversityNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.splitContainer3.Location = new System.Drawing.Point(748, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.groupBox6);
+            this.splitContainer3.Panel1.Controls.Add(this.groupBox5);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer3.Size = new System.Drawing.Size(395, 564);
+            this.splitContainer3.SplitterDistance = 319;
+            this.splitContainer3.TabIndex = 12;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.richTextBox1);
+            this.groupBox6.Location = new System.Drawing.Point(14, 207);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(369, 109);
+            this.groupBox6.TabIndex = 1;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Information";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(6, 20);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(354, 83);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.groupBox7);
+            this.groupBox5.Controls.Add(this.Calendar);
+            this.groupBox5.Location = new System.Drawing.Point(14, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(369, 189);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Calendar";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox7.Location = new System.Drawing.Point(245, 15);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(115, 174);
+            this.groupBox7.TabIndex = 1;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Training Dates";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.sundayCheckBox, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.wednesdayCheckBox, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.saturdayCheckBox, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.thursdayCheckBox, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.fridayCheckBox, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.tuesdayCheckBox, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.mondayCheckBox, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 19);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 7;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(115, 155);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // sundayCheckBox
+            // 
+            this.sundayCheckBox.AutoSize = true;
+            this.sundayCheckBox.Location = new System.Drawing.Point(3, 135);
+            this.sundayCheckBox.Name = "sundayCheckBox";
+            this.sundayCheckBox.Size = new System.Drawing.Size(62, 17);
+            this.sundayCheckBox.TabIndex = 6;
+            this.sundayCheckBox.Text = "Sunday";
+            this.sundayCheckBox.UseVisualStyleBackColor = true;
+            this.sundayCheckBox.CheckedChanged += new System.EventHandler(this.sundayCheckBox_CheckedChanged);
+            // 
+            // wednesdayCheckBox
+            // 
+            this.wednesdayCheckBox.AutoSize = true;
+            this.wednesdayCheckBox.Location = new System.Drawing.Point(3, 47);
+            this.wednesdayCheckBox.Name = "wednesdayCheckBox";
+            this.wednesdayCheckBox.Size = new System.Drawing.Size(83, 16);
+            this.wednesdayCheckBox.TabIndex = 2;
+            this.wednesdayCheckBox.Text = "Wednesday";
+            this.wednesdayCheckBox.UseVisualStyleBackColor = true;
+            this.wednesdayCheckBox.CheckedChanged += new System.EventHandler(this.wednesdayCheckBox_CheckedChanged);
+            // 
+            // saturdayCheckBox
+            // 
+            this.saturdayCheckBox.AutoSize = true;
+            this.saturdayCheckBox.Location = new System.Drawing.Point(3, 113);
+            this.saturdayCheckBox.Name = "saturdayCheckBox";
+            this.saturdayCheckBox.Size = new System.Drawing.Size(68, 16);
+            this.saturdayCheckBox.TabIndex = 5;
+            this.saturdayCheckBox.Text = "Saturday";
+            this.saturdayCheckBox.UseVisualStyleBackColor = true;
+            this.saturdayCheckBox.CheckedChanged += new System.EventHandler(this.saturdayCheckBox_CheckedChanged);
+            // 
+            // thursdayCheckBox
+            // 
+            this.thursdayCheckBox.AutoSize = true;
+            this.thursdayCheckBox.Location = new System.Drawing.Point(3, 69);
+            this.thursdayCheckBox.Name = "thursdayCheckBox";
+            this.thursdayCheckBox.Size = new System.Drawing.Size(70, 16);
+            this.thursdayCheckBox.TabIndex = 3;
+            this.thursdayCheckBox.Text = "Thursday";
+            this.thursdayCheckBox.UseVisualStyleBackColor = true;
+            this.thursdayCheckBox.CheckedChanged += new System.EventHandler(this.thursdayCheckBox_CheckedChanged);
+            // 
+            // fridayCheckBox
+            // 
+            this.fridayCheckBox.AutoSize = true;
+            this.fridayCheckBox.Location = new System.Drawing.Point(3, 91);
+            this.fridayCheckBox.Name = "fridayCheckBox";
+            this.fridayCheckBox.Size = new System.Drawing.Size(54, 16);
+            this.fridayCheckBox.TabIndex = 4;
+            this.fridayCheckBox.Text = "Friday";
+            this.fridayCheckBox.UseVisualStyleBackColor = true;
+            this.fridayCheckBox.CheckedChanged += new System.EventHandler(this.fridayCheckBox_CheckedChanged);
+            // 
+            // tuesdayCheckBox
+            // 
+            this.tuesdayCheckBox.AutoSize = true;
+            this.tuesdayCheckBox.Location = new System.Drawing.Point(3, 25);
+            this.tuesdayCheckBox.Name = "tuesdayCheckBox";
+            this.tuesdayCheckBox.Size = new System.Drawing.Size(67, 16);
+            this.tuesdayCheckBox.TabIndex = 1;
+            this.tuesdayCheckBox.Text = "Tuesday";
+            this.tuesdayCheckBox.UseVisualStyleBackColor = true;
+            this.tuesdayCheckBox.CheckedChanged += new System.EventHandler(this.tuesdayCheckBox_CheckedChanged);
+            // 
+            // mondayCheckBox
+            // 
+            this.mondayCheckBox.AutoSize = true;
+            this.mondayCheckBox.Location = new System.Drawing.Point(3, 3);
+            this.mondayCheckBox.Name = "mondayCheckBox";
+            this.mondayCheckBox.Size = new System.Drawing.Size(64, 16);
+            this.mondayCheckBox.TabIndex = 0;
+            this.mondayCheckBox.Text = "Monday";
+            this.mondayCheckBox.UseVisualStyleBackColor = true;
+            this.mondayCheckBox.CheckedChanged += new System.EventHandler(this.mondayCheckBox_CheckedChanged);
+            // 
+            // Calendar
+            // 
+            this.Calendar.Location = new System.Drawing.Point(6, 15);
+            this.Calendar.Name = "Calendar";
+            this.Calendar.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.trainingPointsNumberLabel);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.panel4);
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Location = new System.Drawing.Point(14, 11);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(369, 211);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Training Focus";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(289, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 24);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "/ 100";
+            // 
+            // trainingPointsNumberLabel
+            // 
+            this.trainingPointsNumberLabel.AutoSize = true;
+            this.trainingPointsNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trainingPointsNumberLabel.Location = new System.Drawing.Point(250, 19);
+            this.trainingPointsNumberLabel.Name = "trainingPointsNumberLabel";
+            this.trainingPointsNumberLabel.Size = new System.Drawing.Size(43, 24);
+            this.trainingPointsNumberLabel.TabIndex = 3;
+            this.trainingPointsNumberLabel.Text = "100";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(247, 24);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Training Points Available:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.staminaTrainingLabel);
+            this.panel4.Controls.Add(this.staminaTrainingNumberLabel);
+            this.panel4.Controls.Add(this.staminaTrainingTrackBar);
+            this.panel4.Location = new System.Drawing.Point(6, 156);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(357, 49);
+            this.panel4.TabIndex = 4;
+            // 
+            // staminaTrainingLabel
+            // 
+            this.staminaTrainingLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.staminaTrainingLabel.AutoSize = true;
+            this.staminaTrainingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staminaTrainingLabel.Location = new System.Drawing.Point(6, 13);
+            this.staminaTrainingLabel.Name = "staminaTrainingLabel";
+            this.staminaTrainingLabel.Size = new System.Drawing.Size(84, 24);
+            this.staminaTrainingLabel.TabIndex = 2;
+            this.staminaTrainingLabel.Text = "Stamina";
+            this.staminaTrainingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // staminaTrainingNumberLabel
+            // 
+            this.staminaTrainingNumberLabel.AutoSize = true;
+            this.staminaTrainingNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staminaTrainingNumberLabel.Location = new System.Drawing.Point(311, 13);
+            this.staminaTrainingNumberLabel.Name = "staminaTrainingNumberLabel";
+            this.staminaTrainingNumberLabel.Size = new System.Drawing.Size(43, 24);
+            this.staminaTrainingNumberLabel.TabIndex = 1;
+            this.staminaTrainingNumberLabel.Text = "100";
+            // 
+            // staminaTrainingTrackBar
+            // 
+            this.staminaTrainingTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.staminaTrainingTrackBar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.staminaTrainingTrackBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.staminaTrainingTrackBar.Location = new System.Drawing.Point(83, 12);
+            this.staminaTrainingTrackBar.Maximum = 100;
+            this.staminaTrainingTrackBar.Name = "staminaTrainingTrackBar";
+            this.staminaTrainingTrackBar.Size = new System.Drawing.Size(231, 45);
+            this.staminaTrainingTrackBar.TabIndex = 0;
+            this.staminaTrainingTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.staminaTrainingTrackBar.Scroll += new System.EventHandler(this.staminaTrainingTrackBar_Scroll);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.powerTrainingLabel);
+            this.panel3.Controls.Add(this.powerTrainingNumberLabel);
+            this.panel3.Controls.Add(this.powerTrainingTrackBar);
+            this.panel3.Location = new System.Drawing.Point(6, 101);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(357, 49);
+            this.panel3.TabIndex = 3;
+            // 
+            // powerTrainingLabel
+            // 
+            this.powerTrainingLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.powerTrainingLabel.AutoSize = true;
+            this.powerTrainingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.powerTrainingLabel.Location = new System.Drawing.Point(8, 13);
+            this.powerTrainingLabel.Name = "powerTrainingLabel";
+            this.powerTrainingLabel.Size = new System.Drawing.Size(69, 24);
+            this.powerTrainingLabel.TabIndex = 2;
+            this.powerTrainingLabel.Text = "Power";
+            this.powerTrainingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // powerTrainingNumberLabel
+            // 
+            this.powerTrainingNumberLabel.AutoSize = true;
+            this.powerTrainingNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.powerTrainingNumberLabel.Location = new System.Drawing.Point(311, 13);
+            this.powerTrainingNumberLabel.Name = "powerTrainingNumberLabel";
+            this.powerTrainingNumberLabel.Size = new System.Drawing.Size(43, 24);
+            this.powerTrainingNumberLabel.TabIndex = 1;
+            this.powerTrainingNumberLabel.Text = "100";
+            // 
+            // powerTrainingTrackBar
+            // 
+            this.powerTrainingTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.powerTrainingTrackBar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.powerTrainingTrackBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.powerTrainingTrackBar.Location = new System.Drawing.Point(83, 13);
+            this.powerTrainingTrackBar.Maximum = 100;
+            this.powerTrainingTrackBar.Name = "powerTrainingTrackBar";
+            this.powerTrainingTrackBar.Size = new System.Drawing.Size(231, 45);
+            this.powerTrainingTrackBar.TabIndex = 0;
+            this.powerTrainingTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.powerTrainingTrackBar.Scroll += new System.EventHandler(this.powerTrainingTrackBar_Scroll);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.speedTrainingLabel);
+            this.panel2.Controls.Add(this.speedTrainingNumberLabel);
+            this.panel2.Controls.Add(this.speedTrainingTrackBar);
+            this.panel2.Location = new System.Drawing.Point(6, 46);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(357, 49);
+            this.panel2.TabIndex = 1;
+            // 
+            // speedTrainingLabel
+            // 
+            this.speedTrainingLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.speedTrainingLabel.AutoSize = true;
+            this.speedTrainingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speedTrainingLabel.Location = new System.Drawing.Point(6, 13);
+            this.speedTrainingLabel.Name = "speedTrainingLabel";
+            this.speedTrainingLabel.Size = new System.Drawing.Size(71, 24);
+            this.speedTrainingLabel.TabIndex = 2;
+            this.speedTrainingLabel.Text = "Speed";
+            this.speedTrainingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // speedTrainingNumberLabel
+            // 
+            this.speedTrainingNumberLabel.AutoSize = true;
+            this.speedTrainingNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speedTrainingNumberLabel.Location = new System.Drawing.Point(311, 13);
+            this.speedTrainingNumberLabel.Name = "speedTrainingNumberLabel";
+            this.speedTrainingNumberLabel.Size = new System.Drawing.Size(43, 24);
+            this.speedTrainingNumberLabel.TabIndex = 1;
+            this.speedTrainingNumberLabel.Text = "100";
+            // 
+            // speedTrainingTrackBar
+            // 
+            this.speedTrainingTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.speedTrainingTrackBar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.speedTrainingTrackBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.speedTrainingTrackBar.Location = new System.Drawing.Point(83, 13);
+            this.speedTrainingTrackBar.Maximum = 100;
+            this.speedTrainingTrackBar.Name = "speedTrainingTrackBar";
+            this.speedTrainingTrackBar.Size = new System.Drawing.Size(231, 45);
+            this.speedTrainingTrackBar.TabIndex = 0;
+            this.speedTrainingTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.speedTrainingTrackBar.Scroll += new System.EventHandler(this.speedTrainingTrackBar_Scroll);
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter1.Location = new System.Drawing.Point(748, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(395, 564);
+            this.splitter1.TabIndex = 11;
+            this.splitter1.TabStop = false;
+            // 
             // personPictureBox
             // 
             this.personPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.personPictureBox.Location = new System.Drawing.Point(37, 52);
+            this.personPictureBox.Location = new System.Drawing.Point(13, 52);
             this.personPictureBox.Name = "personPictureBox";
             this.personPictureBox.Size = new System.Drawing.Size(145, 132);
             this.personPictureBox.TabIndex = 10;
@@ -199,7 +638,7 @@
             // 
             this.personOverallRatingLabel.AutoSize = true;
             this.personOverallRatingLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personOverallRatingLabel.Location = new System.Drawing.Point(192, 80);
+            this.personOverallRatingLabel.Location = new System.Drawing.Point(175, 111);
             this.personOverallRatingLabel.Name = "personOverallRatingLabel";
             this.personOverallRatingLabel.Size = new System.Drawing.Size(88, 64);
             this.personOverallRatingLabel.TabIndex = 5;
@@ -209,7 +648,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(188, 52);
+            this.label8.Location = new System.Drawing.Point(171, 68);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 28);
             this.label8.TabIndex = 4;
@@ -217,7 +656,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Location = new System.Drawing.Point(611, 49);
+            this.groupBox4.Location = new System.Drawing.Point(510, 52);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(232, 498);
             this.groupBox4.TabIndex = 3;
@@ -227,7 +666,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox3.Location = new System.Drawing.Point(337, 49);
+            this.groupBox3.Location = new System.Drawing.Point(272, 52);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(232, 498);
             this.groupBox3.TabIndex = 2;
@@ -341,7 +780,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox2.Location = new System.Drawing.Point(37, 197);
+            this.groupBox2.Location = new System.Drawing.Point(13, 200);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(253, 350);
             this.groupBox2.TabIndex = 1;
@@ -568,17 +1007,26 @@
             // 
             this.personFullNameLabel.AutoSize = true;
             this.personFullNameLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.personFullNameLabel.Location = new System.Drawing.Point(32, 9);
+            this.personFullNameLabel.Location = new System.Drawing.Point(11, 10);
             this.personFullNameLabel.Name = "personFullNameLabel";
             this.personFullNameLabel.Size = new System.Drawing.Size(220, 28);
             this.personFullNameLabel.TabIndex = 0;
             this.personFullNameLabel.Text = "Persons Name Here";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dateLabel);
+            this.panel5.Location = new System.Drawing.Point(802, 24);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(457, 34);
+            this.panel5.TabIndex = 11;
+            // 
             // dateLabel
             // 
             this.dateLabel.AutoSize = true;
+            this.dateLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(716, 24);
+            this.dateLabel.Location = new System.Drawing.Point(201, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(256, 28);
             this.dateLabel.TabIndex = 10;
@@ -589,7 +1037,7 @@
             // 
             this.universityNameLabel.AutoSize = true;
             this.universityNameLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.universityNameLabel.Location = new System.Drawing.Point(330, 24);
+            this.universityNameLabel.Location = new System.Drawing.Point(327, 24);
             this.universityNameLabel.Name = "universityNameLabel";
             this.universityNameLabel.Size = new System.Drawing.Size(187, 28);
             this.universityNameLabel.TabIndex = 8;
@@ -600,7 +1048,7 @@
             // 
             this.universityLogoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.universityLogoPictureBox.Location = new System.Drawing.Point(154, 6);
+            this.universityLogoPictureBox.Location = new System.Drawing.Point(151, 6);
             this.universityLogoPictureBox.Name = "universityLogoPictureBox";
             this.universityLogoPictureBox.Size = new System.Drawing.Size(170, 68);
             this.universityLogoPictureBox.TabIndex = 9;
@@ -608,7 +1056,7 @@
             // 
             // nextDayButton
             // 
-            this.nextDayButton.Location = new System.Drawing.Point(978, 18);
+            this.nextDayButton.Location = new System.Drawing.Point(1265, 18);
             this.nextDayButton.Name = "nextDayButton";
             this.nextDayButton.Size = new System.Drawing.Size(139, 47);
             this.nextDayButton.TabIndex = 1;
@@ -630,7 +1078,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 645);
+            this.ClientSize = new System.Drawing.Size(1416, 645);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainScreen";
             this.Text = "MainScreen";
@@ -645,6 +1093,28 @@
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staminaTrainingTrackBar)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.powerTrainingTrackBar)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.speedTrainingTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -652,6 +1122,8 @@
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universityLogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -700,5 +1172,39 @@
         private System.Windows.Forms.Label personStaminaLabel;
         private System.Windows.Forms.Label personPowerLabel;
         private System.Windows.Forms.Label personSpeedLabel;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Label personUniversityNameLabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TrackBar speedTrainingTrackBar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label speedTrainingNumberLabel;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label staminaTrainingLabel;
+        private System.Windows.Forms.Label staminaTrainingNumberLabel;
+        private System.Windows.Forms.TrackBar staminaTrainingTrackBar;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label powerTrainingLabel;
+        private System.Windows.Forms.Label powerTrainingNumberLabel;
+        private System.Windows.Forms.TrackBar powerTrainingTrackBar;
+        private System.Windows.Forms.Label speedTrainingLabel;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label trainingPointsNumberLabel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.MonthCalendar Calendar;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.CheckBox fridayCheckBox;
+        private System.Windows.Forms.CheckBox thursdayCheckBox;
+        private System.Windows.Forms.CheckBox wednesdayCheckBox;
+        private System.Windows.Forms.CheckBox tuesdayCheckBox;
+        private System.Windows.Forms.CheckBox mondayCheckBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.CheckBox sundayCheckBox;
+        private System.Windows.Forms.CheckBox saturdayCheckBox;
     }
 }

@@ -73,7 +73,7 @@ namespace KaratePrototype
 
         private void GenerateBMI(Random rnd)
         {
-            BMI = Math.Round(((rnd.NextDouble() * 17) + 10),1);
+            BMI = Math.Round(((rnd.NextDouble() + rnd.Next(17,27))),1);
         }
 
         public void GetNewWeight()

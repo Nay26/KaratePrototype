@@ -164,8 +164,10 @@ namespace KaratePrototype
             personPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             personOverallRatingLabel.Text = SelectedPerson.GetOverallRating().ToString();
 
+            personUniversityNameLabel.Text = universityComboBox.Text;
+
             personNationalityLabel.Text = SelectedPerson.Nationality;
-            personHeightLabel.Text = SelectedPerson.Height.ToString();
+            personHeightLabel.Text = SelectedPerson.Height.ToString() + "cm";
             personDobLabel.Text = SelectedPerson.DateOfBirth.ToString("dd/MM/yyyy");
             var today = DateTime.Today;
             var age = today.Year - SelectedPerson.DateOfBirth.Year;
@@ -192,7 +194,7 @@ namespace KaratePrototype
             personLearningRateLabel.Text = SelectedPerson.LearningRate.ToString();
             personKarateIQLabel.Text = SelectedPerson.KarateIQ.Level.ToString();
             personBMILabel.Text = SelectedPerson.BMI.ToString();
-            personWeightLabel.Text = SelectedPerson.Weight.ToString();
+            personWeightLabel.Text = SelectedPerson.Weight.ToString() + "kg";
 
         }
 

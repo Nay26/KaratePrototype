@@ -69,12 +69,12 @@ namespace KaratePrototype
             ImageCombiner combiner = new ImageCombiner();
             Random rnd = new Random();
             generatePeople.PopulateUniversities();
-            //foreach (var uni in databaseOperations.Universities)
-            //{
-            //    Console.WriteLine("Generating Faces for " + uni.Name);
-            //    generatePeople.GenerateFaces(uni.ID, rnd, combiner);
-            //}
-            generatePeople.GenerateFaces(UniversityID, rnd, combiner);
+            foreach (var uni in databaseOperations.Universities)
+            {
+                Console.WriteLine("Generating Faces for " + uni.Name);
+                generatePeople.GenerateFaces(uni.ID, rnd, combiner);
+            }
+            //generatePeople.GenerateFaces(UniversityID, rnd, combiner);
             GoToMainScreen();
 
         }

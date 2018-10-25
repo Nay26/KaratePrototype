@@ -52,31 +52,37 @@
             // 
             // quitButton
             // 
+            this.quitButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.quitButton.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quitButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.quitButton.Location = new System.Drawing.Point(12, 425);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(108, 49);
             this.quitButton.TabIndex = 0;
             this.quitButton.Text = "Quit";
-            this.quitButton.UseVisualStyleBackColor = true;
+            this.quitButton.UseVisualStyleBackColor = false;
             this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(64, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(305, 18);
+            this.label1.Size = new System.Drawing.Size(390, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "Select a Univeristy for your karate club.";
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.groupBox1.Controls.Add(this.universityDescriptionTextBox);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Controls.Add(this.universityLogoPictureBox);
             this.groupBox1.Controls.Add(this.universityNameLabel);
-            this.groupBox1.Location = new System.Drawing.Point(214, 31);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(229, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(301, 387);
             this.groupBox1.TabIndex = 2;
@@ -88,6 +94,7 @@
             this.universityDescriptionTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.universityDescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.universityDescriptionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.universityDescriptionTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.universityDescriptionTextBox.Location = new System.Drawing.Point(6, 173);
             this.universityDescriptionTextBox.Name = "universityDescriptionTextBox";
             this.universityDescriptionTextBox.ReadOnly = true;
@@ -127,10 +134,10 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 64);
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(4, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 21);
+            this.label5.Size = new System.Drawing.Size(86, 21);
             this.label5.TabIndex = 8;
             this.label5.Text = "BUCS Points:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -140,9 +147,10 @@
             this.aUBudgetLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.aUBudgetLabel.AutoSize = true;
+            this.aUBudgetLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aUBudgetLabel.Location = new System.Drawing.Point(97, 43);
             this.aUBudgetLabel.Name = "aUBudgetLabel";
-            this.aUBudgetLabel.Size = new System.Drawing.Size(59, 20);
+            this.aUBudgetLabel.Size = new System.Drawing.Size(74, 20);
             this.aUBudgetLabel.TabIndex = 6;
             this.aUBudgetLabel.Text = "AU Budget";
             this.aUBudgetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,9 +160,10 @@
             this.universityReputationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.universityReputationLabel.AutoSize = true;
+            this.universityReputationLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.universityReputationLabel.Location = new System.Drawing.Point(97, 22);
             this.universityReputationLabel.Name = "universityReputationLabel";
-            this.universityReputationLabel.Size = new System.Drawing.Size(57, 20);
+            this.universityReputationLabel.Size = new System.Drawing.Size(70, 20);
             this.universityReputationLabel.TabIndex = 4;
             this.universityReputationLabel.Text = "Rep Value";
             this.universityReputationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,10 +173,10 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 22);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Reputation:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -177,10 +186,10 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 1);
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(26, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 20);
+            this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Location:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -190,9 +199,10 @@
             this.universityLocationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.universityLocationLabel.AutoSize = true;
+            this.universityLocationLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.universityLocationLabel.Location = new System.Drawing.Point(97, 1);
             this.universityLocationLabel.Name = "universityLocationLabel";
-            this.universityLocationLabel.Size = new System.Drawing.Size(79, 20);
+            this.universityLocationLabel.Size = new System.Drawing.Size(101, 20);
             this.universityLocationLabel.TabIndex = 2;
             this.universityLocationLabel.Text = "Location Name";
             this.universityLocationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -202,10 +212,10 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 43);
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(13, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 20);
+            this.label6.Size = new System.Drawing.Size(77, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "AU Budget:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,9 +225,10 @@
             this.bucsPointsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.bucsPointsLabel.AutoSize = true;
+            this.bucsPointsLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bucsPointsLabel.Location = new System.Drawing.Point(97, 64);
             this.bucsPointsLabel.Name = "bucsPointsLabel";
-            this.bucsPointsLabel.Size = new System.Drawing.Size(35, 21);
+            this.bucsPointsLabel.Size = new System.Drawing.Size(47, 21);
             this.bucsPointsLabel.TabIndex = 7;
             this.bucsPointsLabel.Text = "points";
             this.bucsPointsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -236,38 +247,44 @@
             this.universityNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.universityNameLabel.AutoSize = true;
-            this.universityNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.universityNameLabel.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.universityNameLabel.Location = new System.Drawing.Point(6, 146);
             this.universityNameLabel.Name = "universityNameLabel";
-            this.universityNameLabel.Size = new System.Drawing.Size(159, 24);
+            this.universityNameLabel.Size = new System.Drawing.Size(147, 22);
             this.universityNameLabel.TabIndex = 0;
             this.universityNameLabel.Text = "university of test";
             this.universityNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // universityListBox
             // 
+            this.universityListBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.universityListBox.FormattingEnabled = true;
-            this.universityListBox.Location = new System.Drawing.Point(12, 38);
+            this.universityListBox.ItemHeight = 19;
+            this.universityListBox.Location = new System.Drawing.Point(12, 30);
             this.universityListBox.Name = "universityListBox";
-            this.universityListBox.Size = new System.Drawing.Size(189, 381);
+            this.universityListBox.Size = new System.Drawing.Size(211, 384);
             this.universityListBox.TabIndex = 3;
             this.universityListBox.SelectedIndexChanged += new System.EventHandler(this.universityListBox_SelectedIndexChanged);
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(401, 424);
+            this.startButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.startButton.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.startButton.Location = new System.Drawing.Point(422, 425);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(108, 49);
             this.startButton.TabIndex = 4;
             this.startButton.Text = "Start Game";
-            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // SelectUniversityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 480);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(542, 480);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.universityListBox);
             this.Controls.Add(this.groupBox1);

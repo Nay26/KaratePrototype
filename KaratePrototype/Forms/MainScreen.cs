@@ -107,6 +107,8 @@ namespace KaratePrototype
         // When person is selected from listbox, load that persons information into the form.
         private void peopleListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int listIndex = peopleListBox.SelectedIndex;
+            SelectedPerson = currentlySelectedUniversityPeople[listIndex];
             UpdatePersonInfo();
         }
 
@@ -151,13 +153,13 @@ namespace KaratePrototype
                 }
             }
             peopleListBox.DataSource = peopleNameList;
+           
         }
 
         // Load the currently selected persons information into the form.
         private void UpdatePersonInfo()
         {
-            int listIndex = peopleListBox.SelectedIndex;
-            SelectedPerson = currentlySelectedUniversityPeople[listIndex];
+            
 
             personFullNameLabel.Text = SelectedPerson.FirstName + " " + SelectedPerson.SecondName;
             personPictureBox.ImageLocation = (@".\Creation\CreatedImages\" + SelectedPerson.ID + ".png");
@@ -169,9 +171,8 @@ namespace KaratePrototype
             personNationalityLabel.Text = SelectedPerson.Nationality;
             personHeightLabel.Text = SelectedPerson.Height.ToString() + "cm";
             personDobLabel.Text = SelectedPerson.DateOfBirth.ToString("dd/MM/yyyy");
-            var today = DateTime.Today;
-            var age = today.Year - SelectedPerson.DateOfBirth.Year;
-            if (SelectedPerson.DateOfBirth > today.AddYears(-age)) age--;
+            var age = currentDate.Year - SelectedPerson.DateOfBirth.Year;
+            if (SelectedPerson.DateOfBirth > currentDate.AddYears(-age)) age--;
             personAgeLabel.Text = age.ToString();
             personGenderLabel.Text = SelectedPerson.Gender.LongGender;
 
@@ -278,6 +279,7 @@ namespace KaratePrototype
 
             if (canTrain == true)
             {
+                Person temp = SelectedPerson;
                 Random rnd = new Random();
                 foreach (var person in databaseOperations.People)
                 {
@@ -285,7 +287,15 @@ namespace KaratePrototype
                 }
                 //databaseOperations.UpdatePeople();
                 UpdateSelectedPeopleList();
-                UpdatePersonInfo();
+                SelectedPerson = temp;
+                for (int i = 0; i < currentlySelectedUniversityPeople.Count; i++)            
+                {
+                    if (SelectedPerson.ID == currentlySelectedUniversityPeople[i].ID)
+                    {
+                        peopleListBox.SelectedIndex = i;
+                    }
+                }
+                
             }
             
         }
@@ -390,5 +400,7 @@ namespace KaratePrototype
         {
             TrainingDates[6] = sundayCheckBox.Checked;
         }
+
+
     }
 }

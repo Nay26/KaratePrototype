@@ -26,6 +26,7 @@ namespace KaratePrototype
             databaseOperations.LoadDatabaseData();
             RetrivePlayerUniversityInfo();
             PopulateFormItems();
+
         }
 
         // Load the relevant information to all ui elements on the form.
@@ -35,6 +36,7 @@ namespace KaratePrototype
             LoadUniversityImage();
             LoadUniversityName();
             SetDate();
+            WriteBirthdays();
         }
 
         // Gets the University ID of the university the player selected from the textfile.

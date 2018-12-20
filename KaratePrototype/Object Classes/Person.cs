@@ -267,7 +267,13 @@ namespace KaratePrototype
             sum = sum / 13;
             sum = Math.Round(sum,0);
             rating = Convert.ToInt32(sum);
+            if (rating > 99)
+            {
+                rating = 99;
+            }
+
             return rating;
+            
         }
     }
 }

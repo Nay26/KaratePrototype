@@ -55,6 +55,10 @@ namespace KaratePrototype
         {
             double lvl = 100 * ( (Math.Sqrt(Experiance)) /Constant);
             level = Convert.ToInt32(Math.Round(lvl));
+            if (level > maxLevel)
+            {
+                level = maxLevel;
+            }
         }
 
         public void CalculateXP()
